@@ -49,7 +49,7 @@ const Header = () => {
 
   return (
     <Fragment>
-      <section className="gauto-header-top-area">
+      <section className="oniriqueride-header-top-area">
         <Container>
           <Row>
             <Col md={6}>
@@ -95,13 +95,13 @@ const Header = () => {
           </Row>
         </Container>
       </section>
-      <header className="gauto-main-header-area">
+      <header className="oniriqueride-main-header-area">
         <Container>
           <Row>
             <Col md={3}>
               <div className="site-logo">
                 <a href="/">
-                  <img src={Logo} alt="gauto" />
+                  <img src={Logo} alt="oniriqueride" />
                 </a>
               </div>
             </Col>
@@ -137,13 +137,13 @@ const Header = () => {
           </Row>
         </Container>
       </header>
-      <section className="gauto-mainmenu-area">
+      <section className="oniriqueride-mainmenu-area">
         <Container>
           <Row>
             <Col lg={9}>
               <div className="mainmenu">
                 <nav>
-                  <ul id="gauto_navigation">
+                  <ul id="oniriqueride_navigation">
                     <li>
                       <Link to="/">{t("header-navigation.home")}</Link>
                     </li>

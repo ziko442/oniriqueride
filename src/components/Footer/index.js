@@ -30,7 +30,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="gauto-footer-area">
+    <footer className="oniriqueride-footer-area">
       <div className="footer-top-area">
         <Container>
           <Row>

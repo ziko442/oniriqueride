@@ -18,7 +18,7 @@ const Gallery = () => {
   };
 
   return (
-    <section className="gauto-gallery-area section_70">
+    <section className="oniriqueride-gallery-area section_70">
       <Container>
         <Row>
           <Col lg={4} sm={6}>
@@ -133,7 +133,7 @@ const Gallery = () => {
         <Row>
           <Col md={12}>
             <div className="load-more">
-              <Link to="/" onClick={onClick} className="gauto-btn">
+              <Link to="/" onClick={onClick} className="oniriqueride-btn">
                 {t("btn_gallery")}
               </Link>
             </div>

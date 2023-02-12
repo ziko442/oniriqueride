@@ -52,13 +52,13 @@
   position: relative;
 }
 
-.gauto-comment-list,
-.gauto-leave-comment {
+.oniriqueride-comment-list,
+.oniriqueride-leave-comment {
   margin-top: 50px;
 }
 
-.gauto-comment-list h2,
-.gauto-leave-comment h2 {
+.oniriqueride-comment-list h2,
+.oniriqueride-leave-comment h2 {
   font-size: 23px;
   color: #001238;
   letter-spacing: 1px;
@@ -129,7 +129,7 @@
   padding-left: 100px;
 }
 
-.gauto-leave-comment form input {
+.oniriqueride-leave-comment form input {
   width: 45%;
   border: 2px solid #f0f0ff;
   padding: 5px 10px;
@@ -140,7 +140,7 @@
   margin: 10px 15px 10px 0px;
 }
 
-.gauto-leave-comment form textarea {
+.oniriqueride-leave-comment form textarea {
   border: 2px solid #f0f0ff;
   padding: 5px 10px;
   margin: 10px 0;
@@ -151,12 +151,12 @@
   transition: all 0.4s ease 0s;
 }
 
-.gauto-leave-comment form input:focus,
-.gauto-leave-comment form textarea:focus {
+.oniriqueride-leave-comment form input:focus,
+.oniriqueride-leave-comment form textarea:focus {
   border: 2px solid #deb925;
 }
 
-.gauto-leave-comment .gauto-theme-btn {
+.oniriqueride-leave-comment .oniriqueride-theme-btn {
   width: auto;
   margin-top: 20px;
 }
@@ -165,11 +165,11 @@
   .single-comment-box.reply-comment {
     padding-left: 30px;
   }
-  .gauto-leave-comment form input {
+  .oniriqueride-leave-comment form input {
     width: 100%;
     margin-right: 0;
   }
-  .gauto-leave-comment form textarea {
+  .oniriqueride-leave-comment form textarea {
     width: 100%;
   }
 }
@@ -190,11 +190,11 @@
   .single-comment-box.reply-comment {
     padding-left: 30px;
   }
-  .gauto-leave-comment form input {
+  .oniriqueride-leave-comment form input {
     width: 100%;
     margin-right: 0;
   }
-  .gauto-leave-comment form textarea {
+  .oniriqueride-leave-comment form textarea {
     width: 100%;
   }
 }

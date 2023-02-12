@@ -9,7 +9,7 @@ const Error = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="gauto-notfound-area section_70">
+    <section className="oniriqueride-notfound-area section_70">
       <Container>
         <Row>
           <Col md={12}>
@@ -19,7 +19,7 @@ const Error = () => {
               </h2>
               <h3>{t("error_page.error")}</h3>
               <p>{t("error_page.desc")}</p>
-              <Link to="/" className="gauto-btn">
+              <Link to="/" className="oniriqueride-btn">
                 {t("error_page.back_home")}
               </Link>
             </div>

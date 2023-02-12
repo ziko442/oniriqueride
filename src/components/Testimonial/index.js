@@ -56,7 +56,7 @@ const Testimonial = () => {
   };
 
   return (
-    <section className="gauto-testimonial-area section_70">
+    <section className="oniriqueride-testimonial-area section_70">
       <Container>
         <Row>
           <Col md={12}>

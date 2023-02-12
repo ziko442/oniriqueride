@@ -4,7 +4,7 @@
 @import "/node_modules/@syncfusion/ej2-inputs/styles/material.css";
 @import "/node_modules/@syncfusion/ej2-popups/styles/material.css";
 @import "/node_modules/@syncfusion/ej2-react-calendars/styles/material.css";
-.gauto-car-booking {
+.oniriqueride-car-booking {
   background: #fbfbfb none repeat scroll 0 0;
 }
 
@@ -157,7 +157,7 @@
   margin-bottom: 0px;
 }
 
-.gauto-payment .payment {
+.oniriqueride-payment .payment {
   display: block;
   position: relative;
   float: left;
@@ -165,12 +165,12 @@
   height: auto;
 }
 
-.gauto-payment .payment input[type="radio"] {
+.oniriqueride-payment .payment input[type="radio"] {
   position: absolute;
   visibility: hidden;
 }
 
-.gauto-payment .payment label {
+.oniriqueride-payment .payment label {
   display: inline-block;
   position: relative;
   padding: 0 0 0 30px;
@@ -182,7 +182,7 @@
   font-weight: 500;
 }
 
-.gauto-payment .payment .check {
+.oniriqueride-payment .payment .check {
   display: block;
   position: absolute;
   border: 3px solid #aaaaaa;
@@ -196,7 +196,7 @@
   -webkit-transition: border 0.25s linear;
 }
 
-.gauto-payment .payment .check:before {
+.oniriqueride-payment .payment .check:before {
   display: block;
   position: absolute;
   content: "";
@@ -231,12 +231,12 @@ input[type="radio"]:checked ~ label {
   text-align: right;
 }
 
-.action-btn a.gauto-btn {
+.action-btn a.oniriqueride-btn {
   color: #deb925;
   margin: 30px 0 0 0;
 }
 
-.action-btn a.gauto-btn:hover {
+.action-btn a.oniriqueride-btn:hover {
   color: #fff;
 }
 

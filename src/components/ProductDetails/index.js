@@ -26,7 +26,7 @@ const ProductDetails = () => {
 
   return (
     <>
-      <section className="gauto-product-details section_70">
+      <section className="oniriqueride-product-details section_70">
         <Container>
           <Row>
             <Col lg={6} md={6}>
@@ -75,7 +75,7 @@ const ProductDetails = () => {
                   </p>
                 </div>
                 <div className="single-shop-page-btn">
-                  <Link to="/cart" className="gauto-btn">
+                  <Link to="/cart" className="oniriqueride-btn">
                     <FaShoppingCart /> {t("add_to_cart")}
                   </Link>
                   <ul>
@@ -101,7 +101,7 @@ const ProductDetails = () => {
           </Row>
         </Container>
       </section>
-      <section className="gauto-related-products section_b_70">
+      <section className="oniriqueride-related-products section_b_70">
         <Container>
           <Row>
             <Col md={12}>

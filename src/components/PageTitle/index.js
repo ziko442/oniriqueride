@@ -10,7 +10,7 @@ const PageTitle = (props) => {
   const { t } = useTranslation();
 
   return (
-    <section className="gauto-breadcromb-area section_70">
+    <section className="oniriqueride-breadcromb-area section_70">
       <Container>
         <Row>
           <Col md={12}>

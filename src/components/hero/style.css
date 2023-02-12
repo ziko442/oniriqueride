@@ -1,9 +1,9 @@
 /* ===================== HERO ======================*/
-.gauto-slider-area {
+.oniriqueride-slider-area {
   position: relative;
 }
 
-.gauto-main-slide {
+.oniriqueride-main-slide {
   background-color: #eee;
   background-position: center center;
   background-size: cover;
@@ -19,14 +19,14 @@
   text-align: left;
 }
 
-.gauto-main-caption {
+.oniriqueride-main-caption {
   display: table;
   height: 100%;
   width: 100%;
   background: rgba(0, 0, 0, 0.58) none repeat scroll 0 0;
 }
 
-.gauto-caption-cell {
+.oniriqueride-caption-cell {
   display: table-cell;
   vertical-align: middle;
   text-align: left;
@@ -62,7 +62,7 @@
   .slider-text h2 {
     font-size: 50px;
   }
-  .gauto-main-slide {
+  .oniriqueride-main-slide {
     height: 460px;
   }
 }
@@ -78,7 +78,7 @@
   .slider-text h2 {
     font-size: 35px;
   }
-  .gauto-main-slide {
+  .oniriqueride-main-slide {
     height: 380px;
   }
 }
@@ -94,7 +94,7 @@
   .slider-text h2 {
     font-size: 35px;
   }
-  .gauto-main-slide {
+  .oniriqueride-main-slide {
     height: 380px;
   }
 }

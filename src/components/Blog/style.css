@@ -84,7 +84,7 @@
   fill: #deb925;
 }
 
-.gauto-blog-page-area {
+.oniriqueride-blog-page-area {
   padding-top: 40px;
 }
 
@@ -110,15 +110,15 @@
   color: #111;
 }
 
-.blog-text a.gauto-btn {
+.blog-text a.oniriqueride-btn {
   color: #deb925;
 }
 
-.blog-text a.gauto-btn:hover {
+.blog-text a.oniriqueride-btn:hover {
   color: #fff;
 }
 
-.blog-text a.gauto-btn {
+.blog-text a.oniriqueride-btn {
   color: #deb925;
   margin: 20px 0 0 0;
 }
@@ -135,11 +135,11 @@
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-  .gauto-blog-area .row .col-lg-4:last-child {
+  .oniriqueride-blog-area .row .col-lg-4:last-child {
     display: none;
   }
   .offer-tabs .row .col-lg-4,
-  .gauto-blog-area .row .col-lg-4 {
+  .oniriqueride-blog-area .row .col-lg-4 {
     width: 50%;
   }
 }

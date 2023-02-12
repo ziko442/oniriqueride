@@ -14,7 +14,7 @@ const Blog = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="gauto-blog-area section_70">
+    <section className="oniriqueride-blog-area section_70">
       <Container>
         <Row>
           <Col md="12">

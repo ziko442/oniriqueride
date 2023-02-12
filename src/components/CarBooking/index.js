@@ -38,7 +38,7 @@ const CarBooking = () => {
 
   return (
     <>
-      <section className="gauto-car-booking section_70">
+      <section className="oniriqueride-car-booking section_70">
         <Container>
           <Row>
             <Col lg={6}>
@@ -133,7 +133,7 @@ const CarBooking = () => {
           </Row>
         </Container>
       </section>
-      <section className="gauto-booking-form section_70">
+      <section className="oniriqueride-booking-form section_70">
         <Container>
           <Row>
             <Col lg={8}>
@@ -252,7 +252,7 @@ const CarBooking = () => {
             <Col lg={4}>
               <div className="booking-right">
                 <h3>{t("car_booking.payment_method")}</h3>
-                <div className="gauto-payment clearfix">
+                <div className="oniriqueride-payment clearfix">
                   <div className="payment">
                     <input type="radio" id="ss-option" name="selector" />
                     <label htmlFor="ss-option">
@@ -292,7 +292,7 @@ const CarBooking = () => {
                   </div>
                 </div>
                 <div className="action-btn">
-                  <Link to="/" onClick={onClick} className="gauto-btn">
+                  <Link to="/" onClick={onClick} className="oniriqueride-btn">
                     {t("researve_now")}
                   </Link>
                 </div>

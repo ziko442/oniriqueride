@@ -24,7 +24,7 @@ const Team = () => {
   };
 
   return (
-    <section className="gauto-driver-area section_70">
+    <section className="oniriqueride-driver-area section_70">
       <Container>
         <Row>
           <Col md={12}>
@@ -195,7 +195,7 @@ const Team = () => {
         <Row>
           <Col md={12}>
             <div className="load-more">
-              <Link to="/" onClick={onClick} className="gauto-btn">
+              <Link to="/" onClick={onClick} className="oniriqueride-btn">
                 {t("more_member")}
               </Link>
             </div>

@@ -90,7 +90,7 @@ const Checkout = () => {
               </table>
             </div>
             <div className="booking-right">
-              <div className="gauto-payment clearfix">
+              <div className="oniriqueride-payment clearfix">
                 <div className="payment">
                   <input type="radio" id="ss-option" name="selector" />
                   <label htmlFor="ss-option">
@@ -130,7 +130,7 @@ const Checkout = () => {
                 </div>
               </div>
               <div className="action-btn">
-                <Link to="/" onClick={onClick} className="gauto-btn">
+                <Link to="/" onClick={onClick} className="oniriqueride-btn">
                   {t("researve_now")}
                 </Link>
               </div>

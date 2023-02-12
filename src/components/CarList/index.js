@@ -33,7 +33,7 @@ const CarList = () => {
   };
 
   return (
-    <section className="gauto-car-listing section_70">
+    <section className="oniriqueride-car-listing section_70">
       <Container>
         <Row>
           <Col lg={4}>
@@ -65,7 +65,7 @@ const CarList = () => {
                     ></TimePickerComponent>
                   </p>
                   <p>
-                    <button type="submit" className="gauto-theme-btn">
+                    <button type="submit" className="oniriqueride-theme-btn">
                       {t("find_car")}
                     </button>
                   </p>

@@ -1,11 +1,11 @@
 /* ===================== PAGE TITLE ======================*/
-.gauto-breadcromb-area {
+.oniriqueride-breadcromb-area {
   background: url(../../img/breadcromb.jpg) no-repeat fixed 0 0 / cover;
   position: relative;
   z-index: 1;
 }
 
-.gauto-breadcromb-area:after {
+.oniriqueride-breadcromb-area:after {
   position: absolute;
   content: "";
   top: 0;

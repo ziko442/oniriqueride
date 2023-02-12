@@ -1,5 +1,5 @@
 /* ===================== HEADER ======================*/
-.gauto-header-top-area {
+.oniriqueride-header-top-area {
   background: #020202 none repeat scroll 0 0;
   color: #eee;
   margin-bottom: 10px;
@@ -103,7 +103,7 @@
 .header-top-right > a svg {
   margin-right: 5px;
 }
-.gauto-main-header-area {
+.oniriqueride-main-header-area {
   padding: 15px 0;
 }
 
@@ -186,7 +186,7 @@
   margin-right: 2px;
 }
 
-.gauto-mainmenu-area {
+.oniriqueride-mainmenu-area {
   background: #020202 none repeat scroll 0 0;
   border-bottom: 3px solid #363636;
 }
@@ -507,7 +507,7 @@
   .header-top-left:before {
     right: 0;
   }
-  .gauto-responsive-menu {
+  .oniriqueride-responsive-menu {
     display: block;
     width: 50%;
     left: 0;
@@ -531,10 +531,10 @@
     position: relative;
     z-index: 999;
   }
-  .gauto-about-area {
+  .oniriqueride-about-area {
     padding-bottom: 20px;
   }
-  .gauto-mainmenu-area {
+  .oniriqueride-mainmenu-area {
     padding: 15px 0;
     min-height: 60px;
   }
@@ -560,7 +560,7 @@
   .header-top-right {
     text-align: center;
   }
-  .gauto-responsive-menu {
+  .oniriqueride-responsive-menu {
     display: block;
   }
   .site-logo {
@@ -571,20 +571,20 @@
   .site-logo img {
     width: 100%;
   }
-  .gauto-about-area {
+  .oniriqueride-about-area {
     padding-bottom: 50px;
   }
   .header-promo,
   .header-action {
     display: none;
   }
-  .gauto-header-top-area {
+  .oniriqueride-header-top-area {
     margin-bottom: 0;
   }
   .mainmenu {
     display: none;
   }
-  .gauto-header-top-area {
+  .oniriqueride-header-top-area {
     background: #fff none repeat scroll 0 0;
     border-bottom: 1px solid #eee;
   }
@@ -617,7 +617,7 @@
     z-index: 999999;
     width: 100%;
   }
-  .gauto-mainmenu-area {
+  .oniriqueride-mainmenu-area {
     min-height: 50px;
   }
   .header-cart-box .dropdown.show .cart-dropdown {
@@ -649,7 +649,7 @@
   .header-top-right {
     text-align: center;
   }
-  .gauto-responsive-menu {
+  .oniriqueride-responsive-menu {
     display: block;
   }
   .site-logo {
@@ -657,7 +657,7 @@
     width: 45%;
     margin: 0 auto;
   }
-  .gauto-about-area {
+  .oniriqueride-about-area {
     padding-bottom: 50px;
   }
   .site-logo img {
@@ -674,13 +674,13 @@
   .header-action {
     display: none;
   }
-  .gauto-header-top-area {
+  .oniriqueride-header-top-area {
     margin-bottom: 0;
   }
   .mainmenu {
     display: none;
   }
-  .gauto-header-top-area {
+  .oniriqueride-header-top-area {
     background: #fff none repeat scroll 0 0;
     border-bottom: 1px solid #eee;
   }
@@ -713,7 +713,7 @@
     z-index: 999999;
     width: 100%;
   }
-  .gauto-mainmenu-area {
+  .oniriqueride-mainmenu-area {
     min-height: 50px;
   }
   .header-cart-box .dropdown.show .cart-dropdown {
@@ -732,7 +732,7 @@
     width: 35%;
     margin: 0 auto;
   }
-  .gauto-about-area {
+  .oniriqueride-about-area {
     padding-bottom: 50px;
   }
   .site-logo img {

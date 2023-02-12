@@ -8,7 +8,7 @@ import "./style.css";
 const About = () => {
   const { t } = useTranslation();
   return (
-    <section className="gauto-about-area section_70">
+    <section className="oniriqueride-about-area section_70">
       <Container>
         <Row>
           <Col lg={6}>

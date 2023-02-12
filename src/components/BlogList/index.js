@@ -23,7 +23,7 @@ const BlogList = () => {
   };
 
   return (
-    <section className="gauto-blog-page-area section_70">
+    <section className="oniriqueride-blog-page-area section_70">
       <Container>
         <Row>
           <Col lg={8} md={7}>
@@ -65,7 +65,7 @@ const BlogList = () => {
                     commodo, velit nec aliquam dictum, tortor velit dictum
                     ipsum, sed ornare nunc leo nec ipsum. Vestibulum sagittis
                   </p>
-                  <Link to="/blog-single" className="gauto-btn">
+                  <Link to="/blog-single" className="oniriqueride-btn">
                     {t("blog_page.read_more")}
                   </Link>
                 </div>
@@ -107,7 +107,7 @@ const BlogList = () => {
                     commodo, velit nec aliquam dictum, tortor velit dictum
                     ipsum, sed ornare nunc leo nec ipsum. Vestibulum sagittis
                   </p>
-                  <Link to="/blog-single" className="gauto-btn">
+                  <Link to="/blog-single" className="oniriqueride-btn">
                     {t("blog_page.read_more")}
                   </Link>
                 </div>
@@ -149,7 +149,7 @@ const BlogList = () => {
                     commodo, velit nec aliquam dictum, tortor velit dictum
                     ipsum, sed ornare nunc leo nec ipsum. Vestibulum sagittis
                   </p>
-                  <Link to="/blog-single" className="gauto-btn">
+                  <Link to="/blog-single" className="oniriqueride-btn">
                     {t("blog_page.read_more")}
                   </Link>
                 </div>
@@ -191,7 +191,7 @@ const BlogList = () => {
                     commodo, velit nec aliquam dictum, tortor velit dictum
                     ipsum, sed ornare nunc leo nec ipsum. Vestibulum sagittis
                   </p>
-                  <Link to="/blog-single" className="gauto-btn">
+                  <Link to="/blog-single" className="oniriqueride-btn">
                     {t("blog_page.read_more")}
                   </Link>
                 </div>

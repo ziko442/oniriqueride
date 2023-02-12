@@ -17,7 +17,7 @@ const ServiceDetails = () => {
   };
 
   return (
-    <section className="gauto-service-details-area section_70">
+    <section className="oniriqueride-service-details-area section_70">
       <Container>
         <Row>
           <Col lg={4}>
@@ -61,7 +61,7 @@ const ServiceDetails = () => {
                     Fusce vulputate eleifend sapien. Vestibulum purus quam,
                     risque
                   </p>
-                  <Link to="/" onClick={onClick} className="gauto-btn">
+                  <Link to="/" onClick={onClick} className="oniriqueride-btn">
                     {t("service_details_page.reserve")}
                   </Link>
                 </div>

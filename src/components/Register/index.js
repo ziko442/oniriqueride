@@ -14,7 +14,7 @@ const Register = () => {
   };
 
   return (
-    <section className="gauto-login-area section_70">
+    <section className="oniriqueride-login-area section_70">
       <Container>
         <Row>
           <Col md={12}>
@@ -70,7 +70,7 @@ const Register = () => {
                   </p>
                 </div>
                 <p>
-                  <button type="submit" className="gauto-theme-btn">
+                  <button type="submit" className="oniriqueride-theme-btn">
                     {t("register_page.register_now")}
                   </button>
                 </p>

@@ -53,12 +53,12 @@
   color: #deb925;
 }
 
-.single-shop-page-btn a.gauto-btn {
+.single-shop-page-btn a.oniriqueride-btn {
   color: #deb925;
   margin: 0;
 }
 
-.single-shop-page-btn a.gauto-btn:hover {
+.single-shop-page-btn a.oniriqueride-btn:hover {
   color: #fff;
 }
 
@@ -95,13 +95,13 @@
 }
 
 .single-shop-page-btn ul li a:hover,
-.gauto-cart-close a:hover {
+.oniriqueride-cart-close a:hover {
   background: #deb925 none repeat scroll 0 0;
   color: #fff;
   border: 1px solid #deb925;
 }
 
-.gauto-related-products .product-item {
+.oniriqueride-related-products .product-item {
   margin-top: 30px;
   margin-bottom: 0;
 }

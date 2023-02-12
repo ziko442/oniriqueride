@@ -15,7 +15,7 @@ const Promo = () => {
   };
 
   return (
-    <section className="gauto-promo-area">
+    <section className="oniriqueride-promo-area">
       <Container>
         <Row className="align-items-center">
           <Col md="6">
@@ -26,7 +26,7 @@ const Promo = () => {
           <Col md="6">
             <div className="promo-box-right">
               <h3>{t("promo_text")}</h3>
-              <Link to="/" onClick={onClick} className="gauto-btn">
+              <Link to="/" onClick={onClick} className="oniriqueride-btn">
                 {t("promo_btn")}
               </Link>
             </div>

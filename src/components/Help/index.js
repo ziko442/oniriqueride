@@ -9,7 +9,7 @@ const Help = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="gauto-call-area">
+    <section className="oniriqueride-call-area">
       <Container>
         <Row>
           <Col md={12}>

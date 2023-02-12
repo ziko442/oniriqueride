@@ -16,7 +16,7 @@ const Cart = () => {
   };
 
   return (
-    <section className="gauto-cart-page-area section_70">
+    <section className="oniriqueride-cart-page-area section_70">
       <Container>
         <Row>
           <Col lg={8} md={7}>
@@ -36,52 +36,52 @@ const Cart = () => {
                   </thead>
                   <tbody>
                     <tr className="shop-cart-item">
-                      <td className="gauto-cart-preview">
+                      <td className="oniriqueride-cart-preview">
                         <Link to="/product-single">
                           <img src={img1} alt="cart-1" />
                         </Link>
                       </td>
-                      <td className="gauto-cart-product">
+                      <td className="oniriqueride-cart-product">
                         <Link to="/product-single">
                           <p>car disk break</p>
                         </Link>
                       </td>
-                      <td className="gauto-cart-price">
+                      <td className="oniriqueride-cart-price">
                         <p>$180</p>
                       </td>
-                      <td className="gauto-cart-quantity">
+                      <td className="oniriqueride-cart-quantity">
                         <input type="number" defaultValue={1} />
                       </td>
-                      <td className="gauto-cart-total">
+                      <td className="oniriqueride-cart-total">
                         <p>$180</p>
                       </td>
-                      <td className="gauto-cart-close">
+                      <td className="oniriqueride-cart-close">
                         <Link to="/" onClick={onClick}>
                           <FaTimes />
                         </Link>
                       </td>
                     </tr>
                     <tr className="shop-cart-item">
-                      <td className="gauto-cart-preview">
+                      <td className="oniriqueride-cart-preview">
                         <Link to="/product-single">
                           <img src={img2} alt="cart-1" />
                         </Link>
                       </td>
-                      <td className="gauto-cart-product">
+                      <td className="oniriqueride-cart-product">
                         <Link to="/product-single">
                           <p>shock absorber</p>
                         </Link>
                       </td>
-                      <td className="gauto-cart-price">
+                      <td className="oniriqueride-cart-price">
                         <p>$90</p>
                       </td>
-                      <td className="gauto-cart-quantity">
+                      <td className="oniriqueride-cart-quantity">
                         <input type="number" defaultValue={1} />
                       </td>
-                      <td className="gauto-cart-total">
+                      <td className="oniriqueride-cart-total">
                         <p>$90</p>
                       </td>
-                      <td className="gauto-cart-close">
+                      <td className="oniriqueride-cart-close">
                         <Link to="/" onClick={onClick}>
                           <FaTimes />
                         </Link>
@@ -121,7 +121,7 @@ const Cart = () => {
               </table>
             </div>
             <div className="checkout-action">
-              <Link to="/checkout" className="gauto-btn">
+              <Link to="/checkout" className="oniriqueride-btn">
                 {t("cart.proceed")}
               </Link>
             </div>

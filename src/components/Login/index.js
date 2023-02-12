@@ -18,7 +18,7 @@ const Login = () => {
   };
 
   return (
-    <section className="gauto-login-area section_70">
+    <section className="oniriqueride-login-area section_70">
       <Container>
         <Row>
           <Col md={12}>
@@ -63,7 +63,7 @@ const Login = () => {
                   </p>
                 </div>
                 <p>
-                  <button type="submit" className="gauto-theme-btn">
+                  <button type="submit" className="oniriqueride-theme-btn">
                     {t("login_page.btn")}
                   </button>
                 </p>

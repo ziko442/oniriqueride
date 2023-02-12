@@ -23,7 +23,7 @@ const FindCar = () => {
   };
 
   return (
-    <section className="gauto-find-area">
+    <section className="oniriqueride-find-area">
       <Container>
         <Row>
           <Col md={12}>
@@ -79,7 +79,7 @@ const FindCar = () => {
                         </Col>
                         <Col md={4}>
                           <p>
-                            <button type="submit" className="gauto-theme-btn">
+                            <button type="submit" className="oniriqueride-theme-btn">
                               {t("find_car")}
                             </button>
                           </p>

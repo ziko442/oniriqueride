@@ -16,7 +16,7 @@ const ServiceList = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="gauto-service-area service-page-area section_70">
+    <section className="oniriqueride-service-area service-page-area section_70">
       <Container>
         <Row>
           <Col md={12}>

@@ -21,7 +21,7 @@ const HotOffers = () => {
   };
 
   return (
-    <section className="gauto-offers-area section_70">
+    <section className="oniriqueride-offers-area section_70">
       <Container>
         <Row>
           <Col md={12}>

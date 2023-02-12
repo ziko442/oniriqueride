@@ -54,7 +54,7 @@ const Service = () => {
   };
 
   return (
-    <section className="gauto-service-area section_70">
+    <section className="oniriqueride-service-area section_70">
       <Container>
         <Row>
           <Col md={12}>

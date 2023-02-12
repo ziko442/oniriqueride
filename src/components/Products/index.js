@@ -26,7 +26,7 @@ const Product = () => {
   };
 
   return (
-    <section className="gauto-product-page section_70">
+    <section className="oniriqueride-product-page section_70">
       <Container>
         <Row>
           <Col lg={4} sm={12}>

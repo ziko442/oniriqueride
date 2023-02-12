@@ -146,8 +146,8 @@ li {
   list-style-type: none;
 }
 
-.gauto-btn,
-button.gauto-theme-btn {
+.oniriqueride-btn,
+button.oniriqueride-theme-btn {
   color: #fff;
   background: transparent;
   border-width: 2px;
@@ -165,10 +165,10 @@ button.gauto-theme-btn {
   letter-spacing: 1px;
 }
 
-.gauto-btn:before,
-.gauto-btn:after,
-button.gauto-theme-btn:before,
-button.gauto-theme-btn:after {
+.oniriqueride-btn:before,
+.oniriqueride-btn:after,
+button.oniriqueride-theme-btn:before,
+button.oniriqueride-theme-btn:after {
   content: "";
   display: block;
   position: absolute;
@@ -181,38 +181,38 @@ button.gauto-theme-btn:after {
   transition: all 0.3s ease-in-out;
 }
 
-.gauto-btn:before,
-button.gauto-theme-btn:before {
+.oniriqueride-btn:before,
+button.oniriqueride-theme-btn:before {
   top: -6px;
   left: -6px;
   border-width: 2px 0 0 2px;
   z-index: 5;
 }
 
-.gauto-btn:after,
-button.gauto-theme-btn:after {
+.oniriqueride-btn:after,
+button.oniriqueride-theme-btn:after {
   bottom: -6px;
   right: -6px;
   border-width: 0 2px 2px 0;
 }
 
-.gauto-btn:hover:before,
-.gauto-btn:hover:after,
-button.gauto-theme-btn:hover:before,
-button.gauto-theme-btn:hover:after {
+.oniriqueride-btn:hover:before,
+.oniriqueride-btn:hover:after,
+button.oniriqueride-theme-btn:hover:before,
+button.oniriqueride-theme-btn:hover:after {
   width: calc(100% + 12px);
   height: calc(100% + 12px);
   border-color: #deb925;
 }
 
-.gauto-btn:hover,
-button.gauto-theme-btn:hover {
+.oniriqueride-btn:hover,
+button.oniriqueride-theme-btn:hover {
   color: #fff;
   background-color: #deb925;
   border-color: #deb925;
 }
 
-button.gauto-theme-btn {
+button.oniriqueride-theme-btn {
   color: #deb925;
   background: transparent;
   border-width: 2px;
@@ -232,8 +232,8 @@ button.gauto-theme-btn {
   width: 100%;
 }
 
-button.gauto-theme-btn:before,
-button.gauto-theme-btn:after {
+button.oniriqueride-theme-btn:before,
+button.oniriqueride-theme-btn:after {
   content: "";
   display: block;
   position: absolute;
@@ -246,30 +246,30 @@ button.gauto-theme-btn:after {
   transition: all 0.3s ease-in-out;
 }
 
-.gauto-btn:before,
-button.gauto-theme-btn:before {
+.oniriqueride-btn:before,
+button.oniriqueride-theme-btn:before {
   top: -6px;
   left: -6px;
   border-width: 2px 0 0 2px;
   z-index: 5;
 }
 
-.gauto-btn:after,
-button.gauto-theme-btn:after {
+.oniriqueride-btn:after,
+button.oniriqueride-theme-btn:after {
   bottom: -6px;
   right: -6px;
   border-width: 0 2px 2px 0;
 }
 
-button.gauto-theme-btn:hover:before,
-button.gauto-theme-btn:hover:after {
+button.oniriqueride-theme-btn:hover:before,
+button.oniriqueride-theme-btn:hover:after {
   width: calc(100% + 12px);
   height: calc(100% + 12px);
   border-color: #deb925;
 }
 
-.gauto-btn:hover,
-button.gauto-theme-btn:hover {
+.oniriqueride-btn:hover,
+button.oniriqueride-theme-btn:hover {
   color: #fff;
   background-color: #deb925;
   border-color: #deb925;

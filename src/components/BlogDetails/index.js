@@ -21,7 +21,7 @@ const BlogDetails = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="gauto-blog-page-area section_70">
+    <section className="oniriqueride-blog-page-area section_70">
       <Container>
         <Row>
           <Col lg={8} md={7}>
@@ -118,7 +118,7 @@ const BlogDetails = () => {
                     consectetur{" "}
                   </p>
                 </div>
-                <div className="gauto-comment-list">
+                <div className="oniriqueride-comment-list">
                   <div className="comment-group-title">
                     <h2>3 {t("comments")}</h2>
                   </div>
@@ -200,7 +200,7 @@ const BlogDetails = () => {
                     </div>
                   </div>
                 </div>
-                <div className="gauto-leave-comment">
+                <div className="oniriqueride-leave-comment">
                   <h2>{t("leave_comment")}</h2>
                   <p>{t("must_signin")}</p>
                   <form>
@@ -222,7 +222,7 @@ const BlogDetails = () => {
                       name="comment"
                       defaultValue={""}
                     />
-                    <button type="submit" className="gauto-theme-btn">
+                    <button type="submit" className="oniriqueride-theme-btn">
                       {t("post_comment")}
                     </button>
                   </form>

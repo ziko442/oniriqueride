@@ -54,7 +54,7 @@ const AboutPage = () => {
         </Container>
       </section>
 
-      <section className="gauto-about-promo section_70">
+      <section className="oniriqueride-about-promo section_70">
         <Container>
           <Row>
             <Col md={12}>

@@ -1,11 +1,11 @@
 /* ===================== PROMO ======================*/
-.gauto-promo-area {
+.oniriqueride-promo-area {
   position: relative;
   background: url(../../img/promo_bg.jpg) no-repeat fixed 0 0 / cover;
   z-index: 1;
 }
 
-.gauto-promo-area:after {
+.oniriqueride-promo-area:after {
   position: absolute;
   content: "";
   top: 0;
@@ -87,10 +87,10 @@
     font-size: 28px;
     line-height: 40px;
   }
-  .promo-box-right a.gauto-btn {
+  .promo-box-right a.oniriqueride-btn {
     margin-bottom: 0;
   }
-  .gauto-promo-area {
+  .oniriqueride-promo-area {
     padding: 70px 0;
   }
 }
@@ -105,7 +105,7 @@
     font-size: 28px;
     line-height: 40px;
   }
-  .promo-box-right a.gauto-btn {
+  .promo-box-right a.oniriqueride-btn {
     margin-bottom: 0;
   }
 }

@@ -26,7 +26,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="gauto-contact-area section_70">
+    <section className="oniriqueride-contact-area section_70">
       <Container>
         <Row>
           <Col lg={7} md={6}>
@@ -76,7 +76,7 @@ const Contact = () => {
                 <Row>
                   <Col md={12}>
                     <div className="single-contact-field">
-                      <button type="submit" className="gauto-theme-btn">
+                      <button type="submit" className="oniriqueride-theme-btn">
                         <FaPaperPlane /> {t("contact_page.send")}
                       </button>
                     </div>
