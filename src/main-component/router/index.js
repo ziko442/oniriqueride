@@ -10,7 +10,7 @@ import CarBookingPage from "../CarBookingPage";
 import GalleryPage from "../GalleryPage";
 import ProductPage from "../ProductPage";
 import ProductSinglePage from "../ProductSingle";
-import CartPage from "../CartPage";
+// import CartPage from "../CartPage";
 import Checkout from "../Checkout";
 import BlogPage from "../BlogPage";
 import BlogSinglePage from "../BlogSinglePage";
