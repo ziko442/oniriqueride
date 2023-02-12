@@ -29,11 +29,11 @@ const languages = [
     name: "english",
     country_code: "us",
   },
-  {
-    code: "pt",
-    name: "português",
-    country_code: "pt",
-  },
+  // {
+  //   code: "pt",
+  //   name: "português",
+  //   country_code: "pt",
+  // },
 ];
 
 const Header = () => {
