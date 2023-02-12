@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Homepage from "../HomePage";
 import AboutPage from "../AboutPage";
 import ServicePage from "../ServicePage";
-import ServiceSingle from "../ServiceDetails";
+// import ServiceSingle from "../ServiceDetails";
 import CarListingPage from "../CarListingPage";
 import CarBookingPage from "../CarBookingPage";
 import GalleryPage from "../GalleryPage";
@@ -28,7 +28,7 @@ const AllRoute = () => {
           <Route path="/home" element={<Homepage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/service" element={<ServicePage />} />
-          <Route path="/service-single" element={<ServiceSingle />} />
+          {/* <Route path="/service-single" element={<ServiceSingle />} /> */}
           <Route path="/car-listing" element={<CarListingPage />} />
           <Route path="/car-booking" element={<CarBookingPage />} />
           <Route path="/gallery" element={<GalleryPage />} />
@@ -38,7 +38,7 @@ const AllRoute = () => {
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog-single" element={<BlogSinglePage />} />
-          <Route path="/error" element={<ErrorPage />} />
+          {/* <Route path="/error" element={<ErrorPage />} /> */}
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/contact" element={<ContactPage />} />

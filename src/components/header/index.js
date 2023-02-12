@@ -151,10 +151,11 @@ const Header = () => {
                       <Link to="/about">{t("header-navigation.about")}</Link>
                     </li>
                     <li>
-                      <Link to="/" onClick={onClick}>
+                      {/* <Link to="/" onClick={onClick}> */}
+                      <Link to="/service">
                         {t("header-navigation.service")}
                       </Link>
-                      <ul>
+                      {/* <ul>
                         <li>
                           <Link to="/service">
                             {t("header-navigation.all_service")}
@@ -165,13 +166,14 @@ const Header = () => {
                             {t("header-navigation.service_details")}
                           </Link>
                         </li>
-                      </ul>
+                      </ul> */}
                     </li>
                     <li>
-                      <Link to="/" onClick={onClick}>
+                      {/* <Link to="/" onClick={onClick}> */}
+                      <Link to="/car-listing">
                         {t("header-navigation.cars")}
                       </Link>
-                      <ul>
+                      {/* <ul>
                         <li>
                           <Link to="/car-listing">
                             {t("header-navigation.car_listing")}
@@ -182,14 +184,14 @@ const Header = () => {
                             {t("header-navigation.car_booking")}
                           </Link>
                         </li>
-                      </ul>
+                      </ul> */}
                     </li>
                     <li>
                       <Link to="/gallery">
                         {t("header-navigation.gallery")}
                       </Link>
                     </li>
-                    <li>
+                    {/* <li>
                       <Link to="/" onClick={onClick}>
                         {t("header-navigation.shop")}
                       </Link>
@@ -215,7 +217,7 @@ const Header = () => {
                           </Link>
                         </li>
                       </ul>
-                    </li>
+                    </li> 
                     <li>
                       <Link to="/" onClick={onClick}>
                         {t("header-navigation.pages")}
@@ -245,7 +247,7 @@ const Header = () => {
                           </Link>
                         </li>
                       </ul>
-                    </li>
+                    </li> */}
                     <li>
                       <Link to="/contact">
                         {t("header-navigation.contact")}
@@ -265,14 +267,14 @@ const Header = () => {
                     </Link>
                   </div> */}
                 </div>
-                <div className="search-box">
+                {/* <div className="search-box">
                   <form onSubmit={SubmitHandler}>
                     <input type="search" placeholder="Search" />
                     <button type="submit">
                       <FaSearch />
                     </button>
                   </form>
-                </div>
+                </div> */}
               </div>
             </Col>
           </Row>
