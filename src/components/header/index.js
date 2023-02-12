@@ -259,11 +259,11 @@ const Header = () => {
               <div className="main-search-right">
                 <MobileMenu />
                 <div className="header-cart-box">
-                  <div className="login dropdown">
+                  {/* <div className="login dropdown">
                     <Link to="/cart" className="cart-icon" id="dropdownMenu1">
                       <span>2</span>
                     </Link>
-                  </div>
+                  </div> */}
                 </div>
                 <div className="search-box">
                   <form onSubmit={SubmitHandler}>

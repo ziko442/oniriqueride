@@ -34,7 +34,7 @@ const AllRoute = () => {
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/product" element={<ProductPage />} />
           <Route path="/product-single" element={<ProductSinglePage />} />
-          <Route path="/cart" element={<CartPage />} />
+          {/* <Route path="/cart" element={<CartPage />} /> */}
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog-single" element={<BlogSinglePage />} />
