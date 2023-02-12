@@ -42,7 +42,7 @@ const AllRoute = () => {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/contact" element={<ContactPage />} />
-          <Route element={<ErrorPage />} />
+          <Route path="/*" element={<ErrorPage />} />
         </Routes>
       </Router>
     </div>
