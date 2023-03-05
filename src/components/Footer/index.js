@@ -182,7 +182,7 @@ const Footer = () => {
                 <p>
                   Design With <FaHeart /> {" "}
                   <Link to="/" onClick={onClick}>
-                    ziko442
+                    valldev
                   </Link>
                 </p>
               </div>
