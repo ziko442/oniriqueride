@@ -7,7 +7,7 @@ import {
   FaPhoneAlt,
   FaSignInAlt,
   FaUserAlt,
-  FaSearch,
+  // FaSearch,
   FaGlobe,
 } from "react-icons/fa";
 import MobileMenu from "../../components/MobileMenu";
@@ -38,13 +38,13 @@ const languages = [
 ];
 
 const Header = () => {
-  const SubmitHandler = (e) => {
-    e.preventDefault();
-  };
+  // const SubmitHandler = (e) => {
+  //   e.preventDefault();
+  // };
 
-  const onClick = (e) => {
-    e.preventDefault();
-  };
+  // const onClick = (e) => {
+  //   e.preventDefault();
+  // };
 
   const { t } = useTranslation();
 
