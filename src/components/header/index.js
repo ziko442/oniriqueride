@@ -17,6 +17,7 @@ import globe from "../../img/globe.png";
 import clock from "../../img/clock.png";
 import "flag-icon-css/css/flag-icons.min.css";
 import "./style.css";
+import "./customStyle.css";
 
 const languages = [
   {
