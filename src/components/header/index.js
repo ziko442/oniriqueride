@@ -100,7 +100,7 @@ const Header = () => {
         <Container>
           <Row>
             <Col md={3}>
-              <div className="site-logo">
+              <div className="site-logo" >
                 <a href="/">
                   <img src={Logo} alt="oniriqueride" />
                 </a>

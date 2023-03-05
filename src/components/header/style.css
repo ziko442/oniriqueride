@@ -1,3 +1,9 @@
+/* ================ Oniriqueride Styles ================ */
+.site-logo img {
+  filter: brightness(0) saturate(100%) invert(68%) sepia(64%) saturate(501%)
+    hue-rotate(7deg) brightness(94%) contrast(98%);
+}
+
 /* ===================== HEADER ======================*/
 .oniriqueride-header-top-area {
   background: #020202 none repeat scroll 0 0;
@@ -16,7 +22,11 @@
   /* background: #deb925 none repeat scroll 0 0; */
   /* background-color: #deb925; */
   /* background: rgba(255,189,10,1); */
-  background: linear-gradient(90deg, rgba(255,189,10,1) 75%, rgba(255,57,0,1) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 189, 10, 1) 75%,
+    rgba(255, 57, 0, 1) 100%
+  );
   /* background-image: none; */
   background-repeat: repeat;
   background-attachment: scroll;
@@ -172,8 +182,12 @@
   /* background: #deb925 none repeat scroll 0 0; */
   /* background-color: #deb925; */
   /* background: rgba(255,189,10,1); */
-  background: linear-gradient(90deg, rgba(255,189,10,1) 35%, rgba(255,57,0,1) 100%);
-  
+  background: linear-gradient(
+    90deg,
+    rgba(255, 189, 10, 1) 35%,
+    rgba(255, 57, 0, 1) 100%
+  );
+
   /* background-image: none; */
   background-repeat: repeat;
   background-attachment: scroll;
@@ -193,7 +207,7 @@
   background-color: #ffbd0a;
   /* background: rgba(255,189,10,1); */
   /* background: linear-gradient(90deg, rgba(255,189,10,1) 35%, rgba(255,57,0,1) 100%); */
-  
+
   background-image: none;
   background-repeat: repeat;
   background-attachment: scroll;
@@ -317,7 +331,7 @@
   background-color: #deb925;
   /* background: rgba(255,189,10,1); */
   /* background: linear-gradient(90deg, rgba(255,189,10,1) 35%, rgba(255,57,0,1) 100%); */
-  
+
   background-image: none;
   background-repeat: repeat;
   background-attachment: scroll;
@@ -490,7 +504,7 @@
   background-repeat: repeat;
   background-attachment: scroll;
   background-position: 0 0;
-  
+
   right: -36px;
   z-index: -1;
   -webkit-transform: skewX(40deg);
@@ -620,6 +634,7 @@
     margin: 0 auto;
   }
   .site-logo img {
+    filter: brightness(0) saturate(100%) invert(68%) sepia(64%) saturate(501%) hue-rotate(7deg) brightness(94%) contrast(98%);
     width: 100%;
   }
   .oniriqueride-about-area {
@@ -652,10 +667,10 @@
     background-color: #deb925;
     /* background: linear-gradient(90deg, rgba(255,189,10,1) 35%, rgba(255,57,0,1) 100%); */
 
-  background-image: none;
-  background-repeat: repeat;
-  background-attachment: scroll;
-  background-position: 0 0;
+    background-image: none;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-position: 0 0;
 
     color: #fff;
   }
@@ -720,6 +735,7 @@
     padding-bottom: 50px;
   }
   .site-logo img {
+    filter: brightness(0) saturate(100%) invert(68%) sepia(64%) saturate(501%) hue-rotate(7deg) brightness(94%) contrast(98%);
     width: 100%;
   }
   .single-service {
@@ -753,10 +769,10 @@
     background-color: #deb925;
     /* background: linear-gradient(90deg, rgba(255,189,10,1) 35%, rgba(255,57,0,1) 100%); */
 
-  background-image: none;
-  background-repeat: repeat;
-  background-attachment: scroll;
-  background-position: 0 0;
+    background-image: none;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-position: 0 0;
     color: #fff;
   }
   .offer-action:after {
@@ -802,6 +818,7 @@
     padding-bottom: 50px;
   }
   .site-logo img {
+    filter: brightness(0) saturate(100%) invert(68%) sepia(64%) saturate(501%) hue-rotate(7deg) brightness(94%) contrast(98%);
     width: 100%;
   }
 }
