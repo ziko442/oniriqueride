@@ -40,7 +40,7 @@ const HotOffers = () => {
                 id="uncontrolled-tab-example"
               >
                 {/* All Brands Start */}
-                <Tab eventKey="all" title="All Brands">
+                <Tab eventKey="all" title="All">
                   <Row>
                     <Col lg={4}>
                       <div className="single-offers">
@@ -331,7 +331,7 @@ const HotOffers = () => {
                 {/* All Brands End */}
 
                 {/* Nissan Start */}
-                <Tab eventKey="nissan" title="Nissan">
+                <Tab eventKey="nissan" title="Business Class">
                   <Row>
                     <Col lg={4}>
                       <div className="single-offers">
@@ -479,7 +479,7 @@ const HotOffers = () => {
                 {/* Nissan End */}
 
                 {/* Toyota Start */}
-                <Tab eventKey="toyota" title="Toyota">
+                <Tab eventKey="toyota" title="Van/SUV">
                   <Row>
                     <Col lg={4}>
                       <div className="single-offers">
@@ -627,7 +627,7 @@ const HotOffers = () => {
                 {/* Toyota End */}
 
                 {/* Audi Start */}
-                <Tab eventKey="audi" title="Audi">
+                <Tab eventKey="audi" title="First Class">
                   <Row>
                     <Col lg={4}>
                       <div className="single-offers">
@@ -775,7 +775,7 @@ const HotOffers = () => {
                 {/* Audi End */}
 
                 {/* marcedes Start */}
-                <Tab eventKey="mercedes" title="mercedes">
+                <Tab eventKey="mercedes" title="Sprinter Class">
                   <Row>
                     <Col lg={4}>
                       <div className="single-offers">
