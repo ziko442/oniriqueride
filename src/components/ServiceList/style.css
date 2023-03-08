@@ -40,6 +40,8 @@
 
 .service-icon {
   width: 60px;
+  filter: brightness(0) saturate(100%) invert(68%) sepia(64%) saturate(501%)
+    hue-rotate(7deg) brightness(94%) contrast(98%);
 }
 
 .service-text {
@@ -123,6 +125,8 @@
   }
   .service-icon {
     width: 50px;
+    filter: brightness(0) saturate(100%) invert(68%) sepia(64%) saturate(501%)
+    hue-rotate(7deg) brightness(94%) contrast(98%);
   }
   .service-menu {
     padding: 20px;
