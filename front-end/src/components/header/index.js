@@ -187,11 +187,11 @@ const Header = () => {
                         </li>
                       </ul> */}
                     </li>
-                    <li>
+                    {/* <li>
                       <Link to="/gallery">
                         {t("header-navigation.gallery")}
                       </Link>
-                    </li>
+                    </li> */}
                     {/* <li>
                       <Link to="/" onClick={onClick}>
                         {t("header-navigation.shop")}
