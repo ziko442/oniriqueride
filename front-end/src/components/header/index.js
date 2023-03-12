@@ -147,9 +147,9 @@ const Header = () => {
           <Row>
             <Col md={3}>
               <div className="site-logo">
-                <a href="/">
+                <Link to="/">
                   <img src={Logo} alt="oniriqueride" />
-                </a>
+                </Link>
               </div>
             </Col>
             <Col lg={6} sm={9}>
