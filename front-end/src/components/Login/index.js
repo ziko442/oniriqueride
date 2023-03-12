@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Container, Row, Col } from "react-bootstrap";
 import { FaKey, FaLock, FaUser } from "react-icons/fa";
@@ -13,6 +13,8 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
+  const navigate = useNavigate();
+
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -20,7 +22,7 @@ const Login = () => {
       const { token } = response.data;
       localStorage.setItem("token", token);
       // redirect to the dashboard or any other page
-      window.location.href = "/";
+      navigate('/');
     } catch (error) {
       setErrorMessage(error.response.data.message);
     }
@@ -71,6 +73,7 @@ const Login = () => {
                   </p>
                 </div>
                 <p>
+                  
                   <button type="submit" className="oniriqueride-theme-btn">
                     {t("login_page.btn")}
                   </button>

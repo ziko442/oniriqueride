@@ -1,11 +1,12 @@
 import React, { Fragment } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import i18next from "i18next";
 import { Col, Container, Row, Dropdown } from "react-bootstrap";
 import {
   FaPhoneAlt,
   FaSignInAlt,
+  FaSignOutAlt,
   FaUserAlt,
   // FaSearch,
   FaGlobe,
@@ -47,6 +48,13 @@ const Header = () => {
   // };
 
   const { t } = useTranslation();
+  const token = localStorage.getItem("token");
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    // navigate("/");
+  };
 
   return (
     <Fragment>
@@ -62,35 +70,73 @@ const Header = () => {
             </Col>
             <Col md={6}>
               <div className="header-top-right">
-                <Link to="/login">
-                  <FaSignInAlt />
-                  {t("login")}
-                </Link>
-                <Link to="/register">
-                  <FaUserAlt />
-                  {t("register")}
-                </Link>
-                <Dropdown>
-                  <Dropdown.Toggle variant="success" id="dropdown-basic">
-                    <FaGlobe /> {t("language")}
-                  </Dropdown.Toggle>
+                {!token ? (
+                  <Fragment>
+                    <Link to="/login">
+                      <FaSignInAlt />
+                      {t("login")}
+                    </Link>
+                    <Link to="/register">
+                      <FaUserAlt />
+                      {t("register")}
+                    </Link>
+                    <Dropdown>
+                      <Dropdown.Toggle variant="success" id="dropdown-basic">
+                        <FaGlobe /> {t("language")}
+                      </Dropdown.Toggle>
 
-                  <Dropdown.Menu>
-                    {languages.map(({ code, name, country_code }) => (
-                      <Dropdown.Item
-                        eventKey={name}
-                        key={country_code}
-                        to="/"
-                        onClick={() => i18next.changeLanguage(code)}
-                      >
-                        <span
-                          className={`flag-icon flag-icon-${country_code}`}
-                        ></span>{" "}
-                        {name}
-                      </Dropdown.Item>
-                    ))}
-                  </Dropdown.Menu>
-                </Dropdown>
+                      <Dropdown.Menu>
+                        {languages.map(({ code, name, country_code }) => (
+                          <Dropdown.Item
+                            eventKey={name}
+                            key={country_code}
+                            to="/"
+                            onClick={() => i18next.changeLanguage(code)}
+                          >
+                            <span
+                              className={`flag-icon flag-icon-${country_code}`}
+                            ></span>{" "}
+                            {name}
+                          </Dropdown.Item>
+                        ))}
+                      </Dropdown.Menu>
+                    </Dropdown>
+                  </Fragment>
+                ) : (
+                  <Dropdown>
+                    <Dropdown.Toggle variant="success" id="dropdown-basic">
+                      <FaGlobe /> {t("language")}
+                    </Dropdown.Toggle>
+
+                    <Dropdown.Menu>
+                      {languages.map(({ code, name, country_code }) => (
+                        <Dropdown.Item
+                          eventKey={name}
+                          key={country_code}
+                          to="/"
+                          onClick={() => i18next.changeLanguage(code)}
+                        >
+                          <span
+                            className={`flag-icon flag-icon-${country_code}`}
+                          ></span>{" "}
+                          {name}
+                        </Dropdown.Item>
+                      ))}
+                    </Dropdown.Menu>
+                  </Dropdown>
+                )}
+                {token && (
+                  <Fragment>
+                    <Link
+                      style={{ marginLeft: " 10px" }}
+                      to="/"
+                      onClick={handleLogout}
+                    >
+                      <FaSignOutAlt />
+                      {t("logout")}
+                    </Link>
+                  </Fragment>
+                )}
               </div>
             </Col>
           </Row>
@@ -100,7 +146,7 @@ const Header = () => {
         <Container>
           <Row>
             <Col md={3}>
-              <div className="site-logo" >
+              <div className="site-logo">
                 <a href="/">
                   <img src={Logo} alt="oniriqueride" />
                 </a>
@@ -223,26 +269,26 @@ const Header = () => {
                       <Link to="/" onClick={onClick}>
                         {t("header-navigation.pages")}
                       </Link>
-                      <ul>
-                        <li>
+                  <ul>
+                    <li>
                           <Link to="/blog">{t("header-navigation.blog")}</Link>
-                        </li>
-                        <li>
+                    </li>
+                    <li>
                           <Link to="/blog-single">
                             {t("header-navigation.blog_single")}
                           </Link>
-                        </li>
-                        <li>
+                    </li>
+                    <li>
                           <Link to="/error">
                             {t("header-navigation.not_found")}
                           </Link>
-                        </li>
-                        <li>
+                    </li>
+                    <li>
                           <Link to="/login">
                             {t("header-navigation.login")}
                           </Link>
-                        </li>
-                        <li>
+                    </li>
+                    <li>
                           <Link to="/register">
                             {t("header-navigation.register")}
                           </Link>
