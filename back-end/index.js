@@ -6,6 +6,20 @@ const dotenv = require('dotenv');
 const userRoutes = require('./routes/userRoutes');
 
 dotenv.config();
+const app = express();
+
+
+
+// app.use((req, res, next) => {
+//     res.setHeader('Access-Control-Allow-Origin', '*');
+//     res.setHeader(
+//       'Access-Control-Allow-Headers',
+//       'Origin, X-Requested-With, Content-Type, Accept, Authorization'
+//     );
+//     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH, DELETE');
+  
+//     next();
+//   });
 
 mongoose.connect(process.env.MONGODB_URI).then(() => {
   console.log('Connected to MongoDB');
@@ -13,7 +27,7 @@ mongoose.connect(process.env.MONGODB_URI).then(() => {
   console.error(error);
 });
 
-const app = express();
+
 app.use(bodyParser.json());
 app.use(cors());
 app.use('/api/users', userRoutes);
