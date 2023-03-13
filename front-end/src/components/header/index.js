@@ -53,7 +53,7 @@ const Header = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("token");
-    // navigate("/");
+    navigate("/");
   };
 
   return (
@@ -127,14 +127,13 @@ const Header = () => {
                 )}
                 {token && (
                   <Fragment>
-                    <Link
-                      style={{ marginLeft: " 10px" }}
-                      to="/"
+                    <button
+                    className="btn-logout"
                       onClick={handleLogout}
                     >
                       <FaSignOutAlt />
                       {t("logout")}
-                    </Link>
+                    </button>
                   </Fragment>
                 )}
               </div>

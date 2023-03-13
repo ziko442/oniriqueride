@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Container, Row, Col } from "react-bootstrap";
 import { FaKey, FaLock, FaUser, FaRegEnvelope } from "react-icons/fa";
@@ -8,6 +8,7 @@ import axios from "axios";
 import "./style.css";
 
 const Register = () => {
+  const navigate = useNavigate();
   const { t } = useTranslation();
   const [formData, setFormData] = useState({
     username: "",
@@ -29,6 +30,7 @@ const Register = () => {
     try {
       const response = await axios.post("/api/users/register", formData);
       console.log(response.data); // you can use the response here if needed
+      navigate("/login")
     } catch (error) {
       console.error(error);
     }
