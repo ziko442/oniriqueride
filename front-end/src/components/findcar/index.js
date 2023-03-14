@@ -3,25 +3,82 @@ import { useTranslation } from "react-i18next";
 import { Container, Row, Col, Tabs, Tab } from "react-bootstrap";
 import { registerLicense } from "@syncfusion/ej2-base";
 
+import MapboxAutocomplete from "react-mapbox-autocomplete";
+import axios from "axios";
+
 import {
   DatePickerComponent,
   TimePickerComponent,
 } from "@syncfusion/ej2-react-calendars";
-import "./style.css";
 
-// registerLicense(
-//   "ORg4AjUWIQA/Gnt2VVhiQlFadVlJXGFWfVJpTGpQdk5xdV9DaVZUTWY/P1ZhSXxRdk1jXX9cc3dRR2BbWEM="
-// );
+import "./style.css";
+import "./cutomStyle.css";
 
 registerLicense(
-  "Mgo+DSMBaFt/QHRqVVhkVFpHaV5BQmFJfFBmQGlcfVRxc0UmHVdTRHRcQl9iSH9Uc0diUXxWc3I=;Mgo+DSMBPh8sVXJ0S0J+XE9AflRBQmJKYVF2R2BJelR1dl9HZ0wxOX1dQl9gSXxSd0RkXH1feHBUT2E=;ORg4AjUWIQA/Gnt2VVhkQlFacldJXnxIfUx0RWFab1t6cVdMYVtBJAtUQF1hSn5Rd0RiXnpccXxRQ2Nd;MTExMjQwNkAzMjMwMmUzNDJlMzBsSUhGSkdUOCtvTkZQMmljb1p6dGNCbXQ1VTdHb0ZXYXpjQldkMWdPZ2Q4PQ==;MTExMjQwN0AzMjMwMmUzNDJlMzBlN1JNbXFkWHRPcTFmb0x2MitKamVhTE1Na1Q3MytVQ05CTlI3MG53R3NZPQ==;NRAiBiAaIQQuGjN/V0Z+WE9EaFtKVmBWf1BpR2NbfE51flBEal1WVBYiSV9jS31TdERiWHhbcnVdQ2lZVw==;MTExMjQwOUAzMjMwMmUzNDJlMzBpeFYySElkdWxHa213UEUxU3Rib2VQclpwdzl1NmVKN3FHVUR5SXB2WkcwPQ==;MTExMjQxMEAzMjMwMmUzNDJlMzBtWWlyZUE5d2ZTR0NkUHJvSUdzVWVHbXdZQ0N1dVIrUllhdThMS3lST2lBPQ==;Mgo+DSMBMAY9C3t2VVhkQlFacldJXnxIfUx0RWFab1t6cVdMYVtBJAtUQF1hSn5Rd0RiXnpccXxSRWVb;MTExMjQxMkAzMjMwMmUzNDJlMzBkNld4WmFuYVRBNDRrZGtKam9rSGFVRDZaZEJ3cWEyd1RZSUxnWkhRN3o0PQ==;MTExMjQxM0AzMjMwMmUzNDJlMzBBVzdtcnpXbDVyV28xc3VldnhkR2M1dEM0Z015VHNoOTI2QW9Tdjd5cG1zPQ==;MTExMjQxNEAzMjMwMmUzNDJlMzBpeFYySElkdWxHa213UEUxU3Rib2VQclpwdzl1NmVKN3FHVUR5SXB2WkcwPQ=="
-);
+  process.env.REACT_APP_SYNCFUSION
+  );
+
+const MAPBOX_API_KEY = process.env.REACT_APP_MAPBOX;
+
+async function getTripInfo(startAddress, endAddress) {
+  try {
+    // Convert start and end addresses to coordinates
+    const startResponse = await axios.get(
+      `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(
+        startAddress
+      )}.json?access_token=${MAPBOX_API_KEY}`
+    );
+    const endResponse = await axios.get(
+      `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(
+        endAddress
+      )}.json?access_token=${MAPBOX_API_KEY}`
+    );
+
+    const startCoords = startResponse.data.features[0].center;
+    const endCoords = endResponse.data.features[0].center;
+
+    // Calculate trip distance, duration, and price
+    const response = await axios.get(
+      `https://api.mapbox.com/directions/v5/mapbox/driving/${startCoords[0]},${startCoords[1]};${endCoords[0]},${endCoords[1]}?access_token=${MAPBOX_API_KEY}`
+    );
+
+    if (!response.data.routes || !response.data.routes[0]) {
+      throw new Error("Invalid response from Mapbox API");
+    }
+
+    const distance = response.data.routes[0].distance * 0.000621371; // Convert meters to miles
+    const duration = response.data.routes[0].duration / 60; // Convert seconds to minutes
+    const price = distance * 1.314 + duration * 0.564; // Assuming a price of $1.314 per mile and a price of $0.564 per minute
+
+    return { distance, duration, price };
+  } catch (error) {
+    console.error(error);
+    return { error: "An error occurred while processing your request" };
+  }
+}
+
 const FindCar = () => {
+  const [startAddress, setStartAddress] = useState("");
+  const [endAddress, setEndAddress] = useState("");
+  const [tripInfo, setTripInfo] = useState(null);
+
   const [key, setKey] = useState("one-way");
 
   const { t } = useTranslation();
-  const SubmitHandler = (e) => {
-    e.preventDefault();
+
+  const handleStartAddressSelect = (address) => {
+    setStartAddress(address);
+  };
+
+  const handleEndAddressSelect = (address) => {
+    setEndAddress(address);
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const tripInfo = await getTripInfo(startAddress, endAddress);
+    setTripInfo(tripInfo);
+    console.log(tripInfo);
   };
 
   return (
@@ -45,15 +102,19 @@ const FindCar = () => {
                   >
                     <Tab eventKey="one-way" title="One Way">
                       <div className="find-form">
-                        <form onSubmit={SubmitHandler}>
+                        <form onSubmit={handleSubmit}>
                           <Row>
                             <Col md={4}>
-                              <p>
-                                <input
+                                <MapboxAutocomplete
+                                  publicKey={MAPBOX_API_KEY}
+                                  inputClass="form-control"
+                                  onSuggestionSelect={handleStartAddressSelect}
+                                  country="us"
+                                  resetSearch={false}
                                   type="text"
                                   placeholder={t("from_address")}
-                                />
-                              </p>
+                                >
+                                </MapboxAutocomplete>
                             </Col>
                             <Col md={4}>
                               <p>
@@ -105,7 +166,7 @@ const FindCar = () => {
                     </Tab>
                     <Tab eventKey="by-hour" title="By The Hour">
                       <div className="find-form">
-                        <form onSubmit={SubmitHandler}>
+                        <form onSubmit={handleSubmit}>
                           <Row>
                             <Col md={4}>
                               <p>
