@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import MapboxAutocomplete from "react-mapbox-autocomplete";
 
-const API_KEY = "pk.eyJ1IjoiemFraTQ0MiIsImEiOiJjbGY2Njd2MTMwc2gzNDByMDVibGluNnBoIn0.cV80BVBw4lbnC4lgO-mYyw";
+const API_KEY = process.env.REACT_APP_MAPBOX;
 
 async function getTripInfo(startAddress, endAddress) {
   try {
