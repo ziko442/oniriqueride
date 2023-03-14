@@ -14,9 +14,7 @@ import {
 import "./style.css";
 import "./cutomStyle.css";
 
-registerLicense(
-  process.env.REACT_APP_SYNCFUSION
-  );
+registerLicense(process.env.REACT_APP_SYNCFUSION);
 
 const MAPBOX_API_KEY = process.env.REACT_APP_MAPBOX;
 
@@ -105,24 +103,26 @@ const FindCar = () => {
                         <form onSubmit={handleSubmit}>
                           <Row>
                             <Col md={4}>
-                                <MapboxAutocomplete
-                                  publicKey={MAPBOX_API_KEY}
-                                  inputClass="form-control"
-                                  onSuggestionSelect={handleStartAddressSelect}
-                                  country="us"
-                                  resetSearch={false}
-                                  type="text"
-                                  placeholder={t("from_address")}
-                                >
-                                </MapboxAutocomplete>
+                              <MapboxAutocomplete
+                                publicKey={MAPBOX_API_KEY}
+                                inputClass="form-control"
+                                onSuggestionSelect={handleStartAddressSelect}
+                                country="us"
+                                resetSearch={false}
+                                type="text"
+                                placeholder={t("from_address")}
+                              ></MapboxAutocomplete>
                             </Col>
                             <Col md={4}>
-                              <p>
-                                <input
-                                  type="text"
-                                  placeholder={t("to_address")}
-                                />
-                              </p>
+                              <MapboxAutocomplete
+                                publicKey={MAPBOX_API_KEY}
+                                inputClass="form-control"
+                                onSuggestionSelect={handleEndAddressSelect}
+                                country="us"
+                                resetSearch={false}
+                                // type="text"
+                                placeholder={t("to_address")}
+                              />
                             </Col>
                             <Col md={4}>
                               <p>
@@ -169,12 +169,15 @@ const FindCar = () => {
                         <form onSubmit={handleSubmit}>
                           <Row>
                             <Col md={4}>
-                              <p>
-                                <input
-                                  type="text"
-                                  placeholder={t("from_address")}
-                                />
-                              </p>
+                            <MapboxAutocomplete
+                                publicKey={MAPBOX_API_KEY}
+                                inputClass="form-control"
+                                onSuggestionSelect={handleStartAddressSelect}
+                                country="us"
+                                resetSearch={false}
+                                type="text"
+                                placeholder={t("from_address")}
+                              ></MapboxAutocomplete>
                             </Col>
                             <Col md={4}>
                               <p>
