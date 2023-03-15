@@ -29,7 +29,8 @@ async function getTripInfo(startAddress, endAddress) {
 
     const distance = response.data.routes[0].distance * 0.000621371; // Convert meters to miles
     const duration = response.data.routes[0].duration / 60; // Convert seconds to minutes
-    const price = (distance * 1.314) + (duration * 0.564); // Assuming a price of $1.314 per mile and a price of $0.564 per minute
+    const price = 50 + (distance * 4) + (duration * 1); // Assuming a price of $4per mile and a price of $1 per minute == sedan
+    // suv Assuming a price of $5 per mile and a price of $1.5 per minute
 
     return { distance, duration, price };
   } catch (error) {
