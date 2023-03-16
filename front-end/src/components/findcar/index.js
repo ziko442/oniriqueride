@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from "react";
-import { GoogleApiWrapper } from 'google-maps-react';
-
+import { GoogleApiWrapper } from "google-maps-react";
 import { useTranslation } from "react-i18next";
 import { Container, Row, Col, Tabs, Tab } from "react-bootstrap";
 import { registerLicense } from "@syncfusion/ej2-base";
-
 import {
   DatePickerComponent,
   TimePickerComponent,
 } from "@syncfusion/ej2-react-calendars";
+
+import { PriceCalculator } from "./PriceCalculator";
+
 import "./style.css";
 
 registerLicense(process.env.REACT_APP_SYNCFUSION);
 
 const FindCar = (props) => {
-
   const [key, setKey] = useState("one-way");
   const [distance, setDistance] = useState(null);
   const [duration, setDuration] = useState(null);
@@ -23,67 +23,59 @@ const FindCar = (props) => {
   const [endAddress, setEndAddress] = useState("");
   const { t } = useTranslation();
 
-
   useEffect(() => {
-    const startAutocomplete = new props.google.maps.places.Autocomplete(document.getElementById('start-input'));
-    startAutocomplete.addListener('place_changed', () => {
+    const startAutocomplete = new props.google.maps.places.Autocomplete(
+      document.getElementById("start-input")
+    );
+    startAutocomplete.addListener("place_changed", () => {
       const place = startAutocomplete.getPlace();
       setStartAddress(place.formatted_address);
     });
 
-    const endAutocomplete = new props.google.maps.places.Autocomplete(document.getElementById('end-input'));
-    endAutocomplete.addListener('place_changed', () => {
+    const endAutocomplete = new props.google.maps.places.Autocomplete(
+      document.getElementById("end-input")
+    );
+    endAutocomplete.addListener("place_changed", () => {
       const place = endAutocomplete.getPlace();
       setEndAddress(place.formatted_address);
     });
   }, [props.google.maps.places.Autocomplete]);
 
-//   Start Address: 123 Main St, Anytown, USA
-// End Address: 456 Elm St, Another Town, USA
+  //   Start Address: 123 Main St, Anytown, USA
+  // End Address: 456 Elm St, Another Town, USA
 
   function SubmitHandler(event) {
     event.preventDefault();
-    const {google} = props;
+    const { google } = props;
     const service = new google.maps.DistanceMatrixService();
     service.getDistanceMatrix(
       {
         origins: [startAddress],
         destinations: [endAddress],
-        travelMode: 'DRIVING',
+        travelMode: "DRIVING",
         unitSystem: google.maps.UnitSystem.IMPERIAL,
       },
       (response, status) => {
-        if (status !== 'OK') {
+        if (status !== "OK") {
           console.log(`Error: ${status}`);
         } else {
           const distanceValue = response.rows[0].elements[0].distance.value;
           const durationValue = response.rows[0].elements[0].duration.value;
           setDistance(response.rows[0].elements[0].distance.text);
           setDuration(response.rows[0].elements[0].duration.text);
-          setPrice(calculatePrice(distanceValue, durationValue));
+          setPrice(PriceCalculator(distanceValue, durationValue));
         }
-      });
-  }
-
-  function calculatePrice(distance, duration) {
-    // Replace this with your own pricing algorithm
-    const pricePerMile = 0.50;
-    const pricePerMinute = 0.10;
-    const miles = distance / 1609.34;
-    const minutes = duration / 60;
-    const price = (miles * pricePerMile) + (minutes * pricePerMinute);
-    return price.toFixed(2);
+      }
+    );
   }
 
 
-
-  
   // const SubmitHandler = (e) => {
   //   e.preventDefault();
   // };
 
   return (
-<section className="oniriqueride-find-area">
+    <section className="oniriqueride-find-area">
       <Container>
         <Row>
           <Col md={12}>
@@ -108,8 +100,8 @@ const FindCar = (props) => {
                             <Col md={4}>
                               <p>
                                 <input
-                                id="start-input"
-                                defaultValue={startAddress}
+                                  id="start-input"
+                                  defaultValue={startAddress}
                                   type="text"
                                   placeholder={t("from_address")}
                                 />
@@ -118,21 +110,14 @@ const FindCar = (props) => {
                             <Col md={4}>
                               <p>
                                 <input
-                                id="end-input"
-                                defaultValue={endAddress}
+                                  id="end-input"
+                                  defaultValue={endAddress}
                                   type="text"
                                   placeholder={t("to_address")}
                                 />
                               </p>
                             </Col>
-                            <Col md={4}>
-                              <p>
-                                <select placeholder={t("SelectCar")}>
-                                  <option>{t("ac_car")}</option>
-                                  <option>{t("non_ac_car")}</option>
-                                </select>
-                              </p>
-                            </Col>
+                            <Col md={4}></Col>
                           </Row>
                           <Row>
                             <Col md={4}>
@@ -172,8 +157,8 @@ const FindCar = (props) => {
                             <Col md={4}>
                               <p>
                                 <input
-                                id="start-input"
-                                defaultValue={startAddress}
+                                  id="start-input"
+                                  defaultValue={startAddress}
                                   type="text"
                                   placeholder={t("from_address")}
                                 />
@@ -187,14 +172,7 @@ const FindCar = (props) => {
                                 ></TimePickerComponent>
                               </p>
                             </Col>
-                            <Col md={4}>
-                              <p>
-                                <select placeholder={t("SelectCar")}>
-                                  <option>{t("ac_car")}</option>
-                                  <option>{t("non_ac_car")}</option>
-                                </select>
-                              </p>
-                            </Col>
+                            <Col md={4}></Col>
                           </Row>
                           <Row>
                             <Col md={4}>
@@ -239,6 +217,5 @@ const FindCar = (props) => {
 };
 
 export default GoogleApiWrapper({
-  apiKey: process.env.REACT_APP_GOOGLE_MAPS
+  apiKey: process.env.REACT_APP_GOOGLE_MAPS,
 })(FindCar);
-
