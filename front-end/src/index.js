@@ -28,9 +28,9 @@ const loadingMarkup = <div className="py-4 text-center"></div>;
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Suspense fallback={loadingMarkup}>
-    <React.StrictMode>
+    {/* <React.StrictMode> */}
       <App />
-    </React.StrictMode>
+    {/* </React.StrictMode> */}
   </Suspense>
 );
 

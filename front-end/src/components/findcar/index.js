@@ -1,86 +1,89 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { GoogleApiWrapper } from 'google-maps-react';
+
 import { useTranslation } from "react-i18next";
 import { Container, Row, Col, Tabs, Tab } from "react-bootstrap";
 import { registerLicense } from "@syncfusion/ej2-base";
-
-import MapboxAutocomplete from "react-mapbox-autocomplete";
-import axios from "axios";
 
 import {
   DatePickerComponent,
   TimePickerComponent,
 } from "@syncfusion/ej2-react-calendars";
-
 import "./style.css";
-import "./cutomStyle.css";
 
 registerLicense(process.env.REACT_APP_SYNCFUSION);
 
-const MAPBOX_API_KEY = process.env.REACT_APP_MAPBOX;
-
-async function getTripInfo(startAddress, endAddress) {
-  try {
-    // Convert start and end addresses to coordinates
-    const startResponse = await axios.get(
-      `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(
-        startAddress
-      )}.json?access_token=${MAPBOX_API_KEY}`
-    );
-    const endResponse = await axios.get(
-      `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(
-        endAddress
-      )}.json?access_token=${MAPBOX_API_KEY}`
-    );
-
-    const startCoords = startResponse.data.features[0].center;
-    const endCoords = endResponse.data.features[0].center;
-
-    // Calculate trip distance, duration, and price
-    const response = await axios.get(
-      `https://api.mapbox.com/directions/v5/mapbox/driving/${startCoords[0]},${startCoords[1]};${endCoords[0]},${endCoords[1]}?access_token=${MAPBOX_API_KEY}`
-    );
-
-    if (!response.data.routes || !response.data.routes[0]) {
-      throw new Error("Invalid response from Mapbox API");
-    }
-
-    const distance = response.data.routes[0].distance * 0.000621371; // Convert meters to miles
-    const duration = response.data.routes[0].duration / 60; // Convert seconds to minutes
-    const price = distance * 1.314 + duration * 0.564; // Assuming a price of $1.314 per mile and a price of $0.564 per minute
-
-    return { distance, duration, price };
-  } catch (error) {
-    console.error(error);
-    return { error: "An error occurred while processing your request" };
-  }
-}
-
-const FindCar = () => {
-  const [startAddress, setStartAddress] = useState("");
-  const [endAddress, setEndAddress] = useState("");
-  const [tripInfo, setTripInfo] = useState(null);
+const FindCar = (props) => {
 
   const [key, setKey] = useState("one-way");
-
+  const [distance, setDistance] = useState(null);
+  const [duration, setDuration] = useState(null);
+  const [price, setPrice] = useState(null);
+  const [startAddress, setStartAddress] = useState("");
+  const [endAddress, setEndAddress] = useState("");
   const { t } = useTranslation();
 
-  const handleStartAddressSelect = (address) => {
-    setStartAddress(address);
-  };
 
-  const handleEndAddressSelect = (address) => {
-    setEndAddress(address);
-  };
+  useEffect(() => {
+    const startAutocomplete = new props.google.maps.places.Autocomplete(document.getElementById('start-input'));
+    startAutocomplete.addListener('place_changed', () => {
+      const place = startAutocomplete.getPlace();
+      setStartAddress(place.formatted_address);
+    });
 
-  const handleSubmit = async (event) => {
+    const endAutocomplete = new props.google.maps.places.Autocomplete(document.getElementById('end-input'));
+    endAutocomplete.addListener('place_changed', () => {
+      const place = endAutocomplete.getPlace();
+      setEndAddress(place.formatted_address);
+    });
+  }, [props.google.maps.places.Autocomplete]);
+
+//   Start Address: 123 Main St, Anytown, USA
+// End Address: 456 Elm St, Another Town, USA
+
+  function SubmitHandler(event) {
     event.preventDefault();
-    const tripInfo = await getTripInfo(startAddress, endAddress);
-    setTripInfo(tripInfo);
-    console.log(tripInfo);
-  };
+    const {google} = props;
+    const service = new google.maps.DistanceMatrixService();
+    service.getDistanceMatrix(
+      {
+        origins: [startAddress],
+        destinations: [endAddress],
+        travelMode: 'DRIVING',
+        unitSystem: google.maps.UnitSystem.IMPERIAL,
+      },
+      (response, status) => {
+        if (status !== 'OK') {
+          console.log(`Error: ${status}`);
+        } else {
+          const distanceValue = response.rows[0].elements[0].distance.value;
+          const durationValue = response.rows[0].elements[0].duration.value;
+          setDistance(response.rows[0].elements[0].distance.text);
+          setDuration(response.rows[0].elements[0].duration.text);
+          setPrice(calculatePrice(distanceValue, durationValue));
+        }
+      });
+  }
+
+  function calculatePrice(distance, duration) {
+    // Replace this with your own pricing algorithm
+    const pricePerMile = 0.50;
+    const pricePerMinute = 0.10;
+    const miles = distance / 1609.34;
+    const minutes = duration / 60;
+    const price = (miles * pricePerMile) + (minutes * pricePerMinute);
+    return price.toFixed(2);
+  }
+
+
+
+  
+  // const SubmitHandler = (e) => {
+  //   e.preventDefault();
+  // };
 
   return (
-    <section className="oniriqueride-find-area">
+<section className="oniriqueride-find-area">
       <Container>
         <Row>
           <Col md={12}>
@@ -100,29 +103,27 @@ const FindCar = () => {
                   >
                     <Tab eventKey="one-way" title="One Way">
                       <div className="find-form">
-                        <form onSubmit={handleSubmit}>
+                        <form onSubmit={SubmitHandler}>
                           <Row>
                             <Col md={4}>
-                              <MapboxAutocomplete
-                                publicKey={MAPBOX_API_KEY}
-                                inputClass="form-control"
-                                onSuggestionSelect={handleStartAddressSelect}
-                                country="us"
-                                resetSearch={false}
-                                type="text"
-                                placeholder={t("from_address")}
-                              ></MapboxAutocomplete>
+                              <p>
+                                <input
+                                id="start-input"
+                                defaultValue={startAddress}
+                                  type="text"
+                                  placeholder={t("from_address")}
+                                />
+                              </p>
                             </Col>
                             <Col md={4}>
-                              <MapboxAutocomplete
-                                publicKey={MAPBOX_API_KEY}
-                                inputClass="form-control"
-                                onSuggestionSelect={handleEndAddressSelect}
-                                country="us"
-                                resetSearch={false}
-                                // type="text"
-                                placeholder={t("to_address")}
-                              />
+                              <p>
+                                <input
+                                id="end-input"
+                                defaultValue={endAddress}
+                                  type="text"
+                                  placeholder={t("to_address")}
+                                />
+                              </p>
                             </Col>
                             <Col md={4}>
                               <p>
@@ -166,18 +167,17 @@ const FindCar = () => {
                     </Tab>
                     <Tab eventKey="by-hour" title="By The Hour">
                       <div className="find-form">
-                        <form onSubmit={handleSubmit}>
+                        <form onSubmit={SubmitHandler}>
                           <Row>
                             <Col md={4}>
-                            <MapboxAutocomplete
-                                publicKey={MAPBOX_API_KEY}
-                                inputClass="form-control"
-                                onSuggestionSelect={handleStartAddressSelect}
-                                country="us"
-                                resetSearch={false}
-                                type="text"
-                                placeholder={t("from_address")}
-                              ></MapboxAutocomplete>
+                              <p>
+                                <input
+                                id="start-input"
+                                defaultValue={startAddress}
+                                  type="text"
+                                  placeholder={t("from_address")}
+                                />
+                              </p>
                             </Col>
                             <Col md={4}>
                               <p>
@@ -238,4 +238,7 @@ const FindCar = () => {
   );
 };
 
-export default FindCar;
+export default GoogleApiWrapper({
+  apiKey: process.env.REACT_APP_GOOGLE_MAPS
+})(FindCar);
+
