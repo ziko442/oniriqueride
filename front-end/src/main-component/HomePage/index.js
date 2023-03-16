@@ -5,11 +5,11 @@ import FindCar from "../../components/findcar";
 import About from "../../components/About";
 import Service from "../../components/Service";
 import Promo from "../../components/Promo";
-import HotOffers from "../../components/HotOffers";
+// import HotOffers from "../../components/HotOffers";
 import Testimonial from "../../components/Testimonial";
-import Team from "../../components/Team";
+// import Team from "../../components/Team";
 import Help from "../../components/Help";
-import Blog from "../../components/Blog";
+// import Blog from "../../components/Blog";
 import Footer from "../../components/Footer";
 
 const HomePage = () => {
@@ -19,13 +19,20 @@ const HomePage = () => {
       <Hero />
       <FindCar />
       <About />
-      <Service />
+      <div style={{ marginBottom: "30px"}}>
       <Promo />
-      <HotOffers />
+      </div>
+      <Service />
+
+
+      {/* <HotOffers /> */}
       <Testimonial />
-      <Team />
+      {/* <Team /> */}
+      <div style={{ margin: "25px"}}>
       <Help />
-      <Blog />
+      </div>
+      
+      {/* <Blog /> */}
       <Footer />
     </Fragment>
   );
