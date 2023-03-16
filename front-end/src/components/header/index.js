@@ -103,6 +103,7 @@ const Header = () => {
                     </Dropdown>
                   </Fragment>
                 ) : (
+                    <Fragment>
                   <Dropdown>
                     <Dropdown.Toggle variant="success" id="dropdown-basic">
                       <FaGlobe /> {t("language")}
@@ -124,18 +125,16 @@ const Header = () => {
                       ))}
                     </Dropdown.Menu>
                   </Dropdown>
-                )}
-                {token && (
-                  <Fragment>
-                    <button
-                    className="btn-logout"
-                      onClick={handleLogout}
-                    >
-                      <FaSignOutAlt />
-                      {t("logout")}
-                    </button>
+                  <button
+                  className="btn-logout"
+                  onClick={handleLogout}
+                  >
+                  <FaSignOutAlt />
+                {t("logout")}
+                  </button>
                   </Fragment>
                 )}
+
               </div>
             </Col>
           </Row>
