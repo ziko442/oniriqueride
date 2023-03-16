@@ -8,7 +8,7 @@ import {
   TimePickerComponent,
 } from "@syncfusion/ej2-react-calendars";
 
-import { PriceCalculator } from "./PriceCalculator";
+import { calculatePrice } from "./PriceCalculator";
 
 import "./style.css";
 
@@ -63,7 +63,7 @@ const FindCar = (props) => {
           const durationValue = response.rows[0].elements[0].duration.value;
           setDistance(response.rows[0].elements[0].distance.text);
           setDuration(response.rows[0].elements[0].duration.text);
-          setPrice(PriceCalculator(distanceValue, durationValue));
+          setPrice(calculatePrice(distanceValue, durationValue));
         }
       }
     );
