@@ -20,6 +20,7 @@ mongoose.connect(process.env.MONGODB_URI).then(() => {
 
 
 app.use(bodyParser.json());
+// app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 app.use(cors());
 
 

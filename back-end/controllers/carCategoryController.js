@@ -1,87 +1,153 @@
 const CarCategory = require('../models/carCategory');
+const path = require("path");
+const fs = require('fs');
 
-
-const multer = require('multer');
-
-// Create a multer storage object
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, './images'); // Set the destination folder
-  },
-  filename: function (req, file, cb) {
-    cb(null, Date.now() + '-' + file.originalname); // Set the file name
-  },
-});
-
-// Create a multer upload object
-const upload = multer({ storage: storage });
-
-// Upload an image for a car category by ID
-exports.uploadCarCategoryImageById = upload.single('image'), async (req, res) => {
-  try {
-    const carCategory = await CarCategory.findById(req.params.id);
-    if (!carCategory) {
-      return res.status(404).json({ error: 'Car category not found' });
-    }
-    carCategory.imageUrl = req.file.filename; // Set the image URL
-    await carCategory.save();
-    res.status(200).json(carCategory);
-  } catch (err) {
-    res.status(400).json({ error: err.message });
-  }
-};
-
-
-// Create a new car category
-exports.createCarCategory = async (req, res) => {
-  try {
-    const carCategory = new CarCategory(req.body);
-    await carCategory.save();
-    res.status(201).json(carCategory);
-  } catch (err) {
-    res.status(400).json({ error: err.message });
-  }
-};
-
-// Get all car categories
-exports.getAllCarCategories = async (req, res) => {
+// GET all car categories
+exports.getCarCategories = async (req, res, next) => {
   try {
     const carCategories = await CarCategory.find();
     res.status(200).json(carCategories);
-  } catch (err) {
-    res.status(400).json({ error: err.message });
+  } catch (error) {
+    next(error);
   }
 };
 
-// Get a single car category by ID
-exports.getCarCategoryById = async (req, res) => {
+// GET single car category by ID
+exports.getCarCategoryById = async (req, res, next) => {
+  const { id } = req.params;
+
   try {
-    const carCategory = await CarCategory.findById(req.params.id);
+    const carCategory = await CarCategory.findById(id);
+
+    if (!carCategory) {
+      return res.status(404).json({ message: 'Car category not found' });
+    }
+
     res.status(200).json(carCategory);
-  } catch (err) {
-    res.status(400).json({ error: err.message });
+  } catch (error) {
+    next(error);
   }
 };
 
-// Update a car category by ID
-exports.updateCarCategoryById = async (req, res) => {
+// POST create new car category
+exports.createCarCategory = async (req, res, next) => {
+  const {
+    name,
+    description,
+    maxPassengers,
+    maxLuggage,
+    costPerMile,
+    costPerMinute
+  } = req.body;
+
   try {
-    const carCategory = await CarCategory.findByIdAndUpdate(req.params.id, req.body, {
-      new: true,
-      runValidators: true,
+    const carCategory = new CarCategory({
+      name,
+      description,
+      maxPassengers,
+      maxLuggage,
+      costPerMile,
+      costPerMinute
     });
-    res.status(200).json(carCategory);
-  } catch (err) {
-    res.status(400).json({ error: err.message });
+
+    await carCategory.save();
+
+    res.status(201).json(carCategory);
+  } catch (error) {
+    next(error);
   }
 };
 
-// Delete a car category by ID
-exports.deleteCarCategoryById = async (req, res) => {
+// PUT update existing car category by ID
+exports.updateCarCategoryById = async (req, res, next) => {
+  const { id } = req.params;
+  const {
+    name,
+    description,
+    maxPassengers,
+    maxLuggage,
+    costPerMile,
+    costPerMinute
+  } = req.body;
+
   try {
-    const carCategory = await CarCategory.findByIdAndDelete(req.params.id);
+    const carCategory = await CarCategory.findByIdAndUpdate(
+      id,
+      {
+        name,
+        description,
+        maxPassengers,
+        maxLuggage,
+        costPerMile,
+        costPerMinute
+      },
+      { new: true }
+    );
+
+    if (!carCategory) {
+      return res.status(404).json({ message: 'Car category not found' });
+    }
+
     res.status(200).json(carCategory);
-  } catch (err) {
-    res.status(400).json({ error: err.message });
+  } catch (error) {
+    next(error);
   }
 };
+
+// DELETE remove car category by ID
+exports.deleteCarCategoryById = async (req, res, next) => {
+    const { id } = req.params;
+  
+    try {
+      const carCategory = await CarCategory.findByIdAndRemove(id);
+  
+      if (!carCategory) {
+        return res.status(404).json({ message: 'Car category not found' });
+      }
+  
+      res.status(200).json({ message: 'Car category deleted successfully' });
+    } catch (error) {
+      next(error);
+    }
+  };
+  
+ // POST upload car category image
+exports.uploadCarCategoryImage = async (req, res, next) => {
+  const { id } = req.params;
+
+  try {
+    const carCategory = await CarCategory.findById(id);
+
+    if (!carCategory) {
+      return res.status(404).json({ message: 'Car category not found' });
+    }
+
+    if (!req.file || Object.keys(req.file).length === 0) {
+      return res.status(400).json({ message: 'No image file provided' });
+    }
+
+    const file = req.file;
+    const fileName = `${id}-${file.originalname}`;
+    const filePath = path.join('images', fileName);
+
+    // Delete the old image if it exists
+    if (carCategory.imageUrl) {
+      const oldImagePath = path.join(__dirname, '..', carCategory.imageUrl);
+      fs.unlink(oldImagePath, (err) => {
+        if (err) {
+          console.error(err);
+        }
+      });
+    }
+
+    carCategory.imageUrl = `${filePath}`;
+    await carCategory.save();
+
+    res.status(200).json({ message: 'Image uploaded successfully' });
+  } catch (error) {
+    next(error);
+  }
+};
+
+  
+  

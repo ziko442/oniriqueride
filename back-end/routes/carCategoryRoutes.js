@@ -1,20 +1,22 @@
 const express = require('express');
 const router = express.Router();
 
+const upload = require('../middleware/upload-images');
+
 const {
   createCarCategory,
-  getAllCarCategories,
+  getCarCategories,
   getCarCategoryById,
   updateCarCategoryById,
   deleteCarCategoryById,
-  uploadCarCategoryImageById
+  uploadCarCategoryImage
 } = require('../controllers/carCategoryController');
 
 // Create a new car category
 router.post('/', createCarCategory);
 
 // Get all car categories
-router.get('/', getAllCarCategories);
+router.get('/', getCarCategories);
 
 // Get a single car category by ID
 router.get('/:id', getCarCategoryById);
@@ -26,6 +28,6 @@ router.put('/:id', updateCarCategoryById);
 router.delete('/:id', deleteCarCategoryById);
 
 // Upload an image for a car category by ID
-router.post('/:id/image', uploadCarCategoryImageById);
+router.post('/:id/image', upload.single('image'), uploadCarCategoryImage);
 
 module.exports = router;
