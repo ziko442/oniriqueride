@@ -4,12 +4,9 @@ import { useTranslation } from "react-i18next";
 import { Container, Row, Col } from "react-bootstrap";
 import {
   FaFacebook,
-  FaLinkedin,
+  FaInstagram,
   FaPaperPlane,
-  FaPinterest,
-  FaSkype,
-  FaTwitter,
-  FaVimeo,
+  FaWhatsapp,
 } from "react-icons/fa";
 
 import "./style.css";
@@ -111,31 +108,26 @@ const Contact = () => {
                     </li>
                     <li>
                       <Link to="/" onClick={onClick}>
-                        <FaTwitter />
+                        <FaInstagram />
                       </Link>
                     </li>
+
+                  </ul>
+                  
+                </div>
+
+
+                <div className="social-links-contact">
+                  <h4>Contact Us</h4>
+                  <ul>
                     <li>
-                      <Link to="/" onClick={onClick}>
-                        <FaLinkedin />
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/" onClick={onClick}>
-                        <FaPinterest />
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/" onClick={onClick}>
-                        <FaSkype />
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/" onClick={onClick}>
-                        <FaVimeo />
+                      <Link to="/">
+                        <FaWhatsapp/>
                       </Link>
                     </li>
                   </ul>
-                </div>
+                  </div>
+
               </div>
             </div>
           </Col>

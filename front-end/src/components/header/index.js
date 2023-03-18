@@ -14,7 +14,7 @@ import {
 import MobileMenu from "../../components/MobileMenu";
 
 import Logo from "../../img/logo.png";
-import globe from "../../img/globe.png";
+// import globe from "../../img/globe.png";
 import clock from "../../img/clock.png";
 import "flag-icon-css/css/flag-icons.min.css";
 import "./style.css";
@@ -152,7 +152,7 @@ const Header = () => {
             </Col>
             <Col lg={6} sm={9}>
               <div className="header-promo">
-                <div className="single-header-promo">
+                {/* <div className="single-header-promo">
                   <div className="header-promo-icon">
                     <img src={globe} alt="globe" />
                   </div>
@@ -160,7 +160,7 @@ const Header = () => {
                     <h3>Newyork, USA</h3>
                     <p>{t("melbourne_city")}</p>
                   </div>
-                </div>
+                </div> */}
                 <div className="single-header-promo">
                   <div className="header-promo-icon">
                     <img src={clock} alt="clock" />

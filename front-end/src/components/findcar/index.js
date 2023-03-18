@@ -211,6 +211,7 @@ const FindCar = (props) => {
             </div>
           </Col>
         </Row>
+        <div hidden>{distance}{duration} {price}</div>
       </Container>
     </section>
   );
