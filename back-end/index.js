@@ -4,9 +4,11 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const dotenv = require('dotenv');
 
+// const authMiddleware = require('./middleware/auth-middleware');
 
 const userRoutes = require('./routes/userRoutes');
 const carCategoryRoutes = require('./routes/carCategoryRoutes');
+const ordersRoutes = require('./routes/ordersRoutes')
 
 dotenv.config();
 const app = express();
@@ -26,6 +28,9 @@ app.use(cors());
 
 app.use('/api/users', userRoutes);
 app.use('/api/car-categories', carCategoryRoutes);
+app.use('/api/orders', ordersRoutes);
+// app.use('/orders', authMiddleware, orderRoutes);
+
 app.use('/images', express.static('images'));
 
 
