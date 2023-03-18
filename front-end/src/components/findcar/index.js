@@ -41,7 +41,7 @@ const FindCar = (props) => {
     });
   }, [props.google.maps.places.Autocomplete]);
 
-  //   Start Address: 123 Main St, Anytown, USA
+  // Start Address: 123 Main St, Anytown, USA
   // End Address: 456 Elm St, Another Town, USA
 
   function SubmitHandler(event) {
