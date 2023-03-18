@@ -8,13 +8,13 @@ import {
   FaTwitter,
   FaLinkedinIn,
   FaSkype,
-  FaPaperPlane,
+  // FaPaperPlane,
 } from "react-icons/fa";
 
 import logo from "../../img/footer-logo.png";
-import img1 from "../../img/post-thumb-3.jpg";
-import img2 from "../../img/post-thumb-2.jpg";
-import img3 from "../../img/post-thumb-1.jpg";
+// import img1 from "../../img/post-thumb-3.jpg";
+// import img2 from "../../img/post-thumb-2.jpg";
+// import img3 from "../../img/post-thumb-1.jpg";
 
 import "./style.css";
 
@@ -25,9 +25,9 @@ const Footer = () => {
     e.preventDefault();
   };
 
-  const SubmitHandler = (e) => {
-    e.preventDefault();
-  };
+  // const SubmitHandler = (e) => {
+  //   e.preventDefault();
+  // };
 
   return (
     <footer className="oniriqueride-footer-area">
