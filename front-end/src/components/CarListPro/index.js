@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 import { Container, Row, Col } from "react-bootstrap";
 import {
  
@@ -16,15 +16,15 @@ import "./style.css";
 import "./customStyle.css";
 
 const CarList = () => {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
 
-  const SubmitHandler = (e) => {
-    e.preventDefault();
-  };
+  // const SubmitHandler = (e) => {
+  //   e.preventDefault();
+  // };
 
-  const onClick = (e) => {
-    e.preventDefault();
-  };
+  // const onClick = (e) => {
+  //   e.preventDefault();
+  // };
 
   const headerStyle = {
     backgroundColor: "rgb(210, 210, 210)",
