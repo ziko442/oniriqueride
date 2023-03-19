@@ -18,6 +18,7 @@ import ErrorPage from "../ErrorPage";
 import LoginPage from "../LoginPage";
 import RegisterPage from "../RegisterPage";
 import ContactPage from "../ContactPage";
+import CarListingProPage from "../CarListingProPage";
 
 const AllRoute = () => {
   return (
@@ -30,6 +31,7 @@ const AllRoute = () => {
           <Route path="/service" element={<ServicePage />} />
           <Route path="/service-single" element={<ServiceSingle />} />
           <Route path="/car-listing" element={<CarListingPage />} />
+          <Route path="/car-listing-pro" element={<CarListingProPage />} />
           <Route path="/car-booking" element={<CarBookingPage />} />
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/product" element={<ProductPage />} />

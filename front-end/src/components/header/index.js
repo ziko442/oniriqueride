@@ -218,6 +218,9 @@ const Header = () => {
                       <Link to="/car-listing">
                         {t("header-navigation.cars")}
                       </Link>
+                      <Link to="/car-listing-pro">
+                        {t("header-navigation.cars")+" Pro"}
+                      </Link>
                       {/* <ul>
                         <li>
                           <Link to="/car-listing">

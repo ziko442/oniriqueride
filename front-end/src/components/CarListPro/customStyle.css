@@ -1,0 +1,147 @@
+.shortened {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 18%;
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+
+  .test {
+    text-align: inherit;
+    color: rgb(187, 187, 187);
+  }
+
+  .container-car-categ{
+    margin-left: 14.1%;
+    letter-spacing: .64px;
+    letter-spacing: .04rem;
+    font-family: Source Sans Pro,Helvetica,Arial,Microsoft Yahei,微软雅黑,STXihei,华文细黑,sans-serif;
+    font-size: 12px;
+  }
+
+  .container-car-categ div {
+    /* color: #000; */
+  }
+  .car-cat-title {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: .2px;
+    line-height: 40px;
+    text-transform: capitalize;
+  }
+  .vehicle {
+    padding-top: 24px;
+    padding-bottom:24px;
+  }
+  .vehicle-title{
+    border-bottom: 1px solid #a8a8a8;
+    display: inline-block;
+    line-height: 1;
+    width: 100%;
+    color: #000;
+  }
+
+  .vehicle-desc{
+    font-weight: 200;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: .15px;
+    line-height: 24px;
+    margin-bottom: -3px;
+  }
+
+   .vehicle-capacity {
+    font-weight: 300;
+    /* margin-bottom: 16px; */
+    margin-top: 16px;
+   }
+
+   .vehicle-capacity-type {
+    display: inline-block;
+    height: 24px;
+    line-height: 24px;
+    font-size: 13px;
+    padding-right: 30px;
+   }
+
+   .fa-icon {
+    font-size: 20px;
+    margin-right: 5px;
+    padding-top: 2px;
+   }
+ 
+   .vehicle-infos{
+    align-items: flex-start;
+    display: flex;
+    justify-content: flex-start;
+    padding-bottom: 24px;
+    padding-top: 24px;
+   }
+
+   .vehicle-info-text {
+    flex: 0 1 25%;
+    margin-bottom: 3px;
+   }
+
+   .vehicle-price-info {
+    /* background-color: #f0f0f0; */
+    flex: 0 0 20%;
+    padding: 16px;
+   }
+
+   .vh-price {
+    color: #000;
+    font-family: 'Courier New', Courier, monospace;
+   }
+   .vh-fees {
+
+   }
+
+   .v-info-icon {
+    font-size: 16px;
+    margin-right: 3px;
+    display: inline-block;
+    margin-top: 2px;
+    /* color: rgb(34, 34, 34); */
+   }
+
+   .vehicle-info-example {
+    letter-spacing: .15px;
+    margin-left: 8px;
+   }
+
+   .vehicle-info-type {
+    color: #4e4e4e;
+    /* display: flex; */
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 24px;
+    margin-bottom: 12px;
+   }
+
+   .bg-card {
+    background-color: #f0f0f0;
+    border-radius: 0%;
+    border: none;
+   }
+
+   .btn-select {
+    /* background: rgb(255,189,10); */
+    color: white;
+    font-weight: 600;
+    background: linear-gradient(to right, #FF0000, #FFA500);
+    margin-right: -5px;
+    /* background-color: orangered; */
+
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-clip: border-box;
+  }
+
+  .vehicle-image-ref {
+    width: 90%;
+    height: fit-content;
+  }
