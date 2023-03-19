@@ -4,8 +4,8 @@ import { useTranslation } from "react-i18next";
 import Header from "../../components/header";
 import PageTitle from "../../components/PageTitle";
 import AboutPageList from "../../components/AboutPage";
-import Team from "../../components/Team";
-import Promo from "../../components/Promo";
+// import Team from "../../components/Team";
+// import Promo from "../../components/Promo";
 import Footer from "../../components/Footer";
 
 const AboutPage = () => {
@@ -19,8 +19,8 @@ const AboutPage = () => {
         pagesub={t("header-navigation.about")}
       />
       <AboutPageList />
-      <Promo />
-      <Team />
+
+      {/* <Team /> */}
       <Footer />
     </Fragment>
   );

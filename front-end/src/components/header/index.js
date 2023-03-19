@@ -14,7 +14,7 @@ import {
 import MobileMenu from "../../components/MobileMenu";
 
 import Logo from "../../img/logo.png";
-import globe from "../../img/globe.png";
+// import globe from "../../img/globe.png";
 import clock from "../../img/clock.png";
 import "flag-icon-css/css/flag-icons.min.css";
 import "./style.css";
@@ -217,9 +217,6 @@ const Header = () => {
                       {/* <Link to="/" onClick={onClick}> */}
                       <Link to="/car-listing">
                         {t("header-navigation.cars")}
-                      </Link>
-                      <Link to="/car-listing-pro">
-                        {t("header-navigation.cars")+" Pro"}
                       </Link>
                       {/* <ul>
                         <li>

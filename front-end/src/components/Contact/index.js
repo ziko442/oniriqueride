@@ -4,12 +4,9 @@ import { useTranslation } from "react-i18next";
 import { Container, Row, Col } from "react-bootstrap";
 import {
   FaFacebook,
-  FaLinkedin,
+  FaInstagram,
   FaPaperPlane,
-  FaPinterest,
-  FaSkype,
-  FaTwitter,
-  FaVimeo,
+  FaWhatsapp,
 } from "react-icons/fa";
 
 import "./style.css";
@@ -89,10 +86,10 @@ const Contact = () => {
             <div className="contact-right">
               <h3>{t("contact_page.info_title")} </h3>
               <div className="contact-details">
-                <p>
+                {/* <p>
                   <i className="fa fa-map-marker" /> 125 Big fella St. Road, New
                   York, Hi 5654775{" "}
-                </p>
+                </p> */}
                 <div className="single-contact-btn">
                   <h4>{t("contact_page.info_email")}</h4>
                   <a href="mailto:info@example.com">info@example.com</a>
@@ -111,31 +108,26 @@ const Contact = () => {
                     </li>
                     <li>
                       <Link to="/" onClick={onClick}>
-                        <FaTwitter />
+                        <FaInstagram />
                       </Link>
                     </li>
+
+                  </ul>
+                  
+                </div>
+
+
+                <div className="social-links-contact">
+                  <h4>Contact Us</h4>
+                  <ul>
                     <li>
-                      <Link to="/" onClick={onClick}>
-                        <FaLinkedin />
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/" onClick={onClick}>
-                        <FaPinterest />
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/" onClick={onClick}>
-                        <FaSkype />
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/" onClick={onClick}>
-                        <FaVimeo />
+                      <Link to="/">
+                        <FaWhatsapp/>
                       </Link>
                     </li>
                   </ul>
-                </div>
+                  </div>
+
               </div>
             </div>
           </Col>

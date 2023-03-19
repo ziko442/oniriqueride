@@ -34,10 +34,10 @@ const menus = [
     //   },
     // ],
   },
-  {
-    id: 4,
-    title: "Cars",
-    link: "/car-listing",
+  // {
+    // id: 4,
+    // title: "Cars",
+    // link: "/car-listing",
     // submenu: [
     //   {
     //     id: 41,
@@ -50,7 +50,7 @@ const menus = [
     //     link: "/car-booking",
     //   },
     // ],
-  },
+  // },
   // {
   //   id: 5,
   //   title: "Gallery",

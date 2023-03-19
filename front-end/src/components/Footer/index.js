@@ -8,13 +8,13 @@ import {
   FaTwitter,
   FaLinkedinIn,
   FaSkype,
-  FaPaperPlane,
+  // FaPaperPlane,
 } from "react-icons/fa";
 
 import logo from "../../img/footer-logo.png";
-import img1 from "../../img/post-thumb-3.jpg";
-import img2 from "../../img/post-thumb-2.jpg";
-import img3 from "../../img/post-thumb-1.jpg";
+// import img1 from "../../img/post-thumb-3.jpg";
+// import img2 from "../../img/post-thumb-2.jpg";
+// import img3 from "../../img/post-thumb-1.jpg";
 
 import "./style.css";
 
@@ -25,16 +25,16 @@ const Footer = () => {
     e.preventDefault();
   };
 
-  const SubmitHandler = (e) => {
-    e.preventDefault();
-  };
+  // const SubmitHandler = (e) => {
+  //   e.preventDefault();
+  // };
 
   return (
     <footer className="oniriqueride-footer-area">
       <div className="footer-top-area">
         <Container>
           <Row>
-            <Col lg={4}>
+            <Col lg={3}>
               <div className="single-footer">
                 <div className="footer-logo">
                   <Link to="/">
@@ -46,20 +46,10 @@ const Footer = () => {
                   aliqua. Ut enim ad minim veniam, quis nostrud exercitation
                   ullamco.
                 </p>
-                <div className="footer-address">
-                  <h3>{t("footer.head_office")}</h3>
-                  <p>
-                    125 Big fella St. Road, <span>New York, Hi 5654775</span>
-                  </p>
-                  <ul>
-                    <li>{t("footer.phone")}: 326487652 </li>
-                    <li>{t("footer.email")}: example@mail.com</li>
-                    <li>{t("footer.office_time")}: 9AM- 4PM</li>
-                  </ul>
-                </div>
+
               </div>
             </Col>
-            <Col lg={4}>
+            <Col lg={3}>
               <div className="single-footer quick_links">
                 <h3>{t("footer.quick_links")}</h3>
                 <ul className="quick-links">
@@ -85,6 +75,20 @@ const Footer = () => {
                     </Link>
                   </li>
                 </ul>
+              </div>
+              {/* <div className="single-footer newsletter_box">
+                <h3>{t("footer.newsletter")}</h3>
+                <form onSubmit={SubmitHandler}>
+                  <input type="email" placeholder="Email Address" />
+                  <button type="submit">
+                    <FaPaperPlane />
+                  </button>
+                </form>
+              </div> */}
+            </Col>
+            <Col lg={3}>
+              <div className="single-footer">
+                <h3> Other Pages</h3>
                 <ul className="quick-links">
                   <li>
                     <Link to="/" onClick={onClick}>
@@ -103,74 +107,19 @@ const Footer = () => {
                   </li>
                 </ul>
               </div>
-              <div className="single-footer newsletter_box">
-                <h3>{t("footer.newsletter")}</h3>
-                <form onSubmit={SubmitHandler}>
-                  <input type="email" placeholder="Email Address" />
-                  <button type="submit">
-                    <FaPaperPlane />
-                  </button>
-                </form>
-              </div>
             </Col>
-            <Col lg={4}>
+            <Col lg={3}>
               <div className="single-footer">
-                <h3> {t("footer.recent_post")}</h3>
-                <ul>
-                  <li>
-                    <div className="single-footer-post">
-                      <div className="footer-post-image">
-                        <Link to="/blog-single">
-                          <img src={img1} alt="footer post" />
-                        </Link>
-                      </div>
-                      <div className="footer-post-text">
-                        <h3>
-                          <Link to="/blog-single">
-                            Revealed: How to set goals for you and your team
-                          </Link>
-                        </h3>
-                        <p>Posted on: Jan 12, 2019</p>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="single-footer-post">
-                      <div className="footer-post-image">
-                        <Link to="/blog-single">
-                          <img src={img2} alt="footer post" />
-                        </Link>
-                      </div>
-                      <div className="footer-post-text">
-                        <h3>
-                          <Link to="/blog-single">
-                            Revealed: How to set goals for you and your team
-                          </Link>
-                        </h3>
-                        <p>Posted on: Jan 12, 2019</p>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="single-footer-post">
-                      <div className="footer-post-image">
-                        <Link to="/blog-single">
-                          <img src={img3} alt="footer post" />
-                        </Link>
-                      </div>
-                      <div className="footer-post-text">
-                        <h3>
-                          <Link to="/blog-single">
-                            apartment in the sky love three boys of his own.
-                          </Link>
-                        </h3>
-                        <p>Posted on: Jan 12, 2019</p>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
+                  <h3>{t("footer.head_office")}</h3>
+                  <ul>
+                    <li>{t("footer.phone")}: 326487652 </li>
+                    <li>{t("footer.email")}: example@mail.com</li>
+                    <li>{t("footer.office_time")}: 9AM- 4PM</li>
+                  </ul>
+
               </div>
             </Col>
+            
           </Row>
         </Container>
       </div>
@@ -180,9 +129,9 @@ const Footer = () => {
             <Col md={6}>
               <div className="copyright">
                 <p>
-                  Design With <FaHeart /> {" "}
+                  Design With <FaHeart />{" "}
                   <Link to="/" onClick={onClick}>
-                    valldev
+                    Onirique Ride
                   </Link>
                 </p>
               </div>
