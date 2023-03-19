@@ -215,8 +215,9 @@ const Header = () => {
                     </li>
                     <li>
                       {/* <Link to="/" onClick={onClick}> */}
-                      <Link to="/car-listing">
-                        {t("header-navigation.cars")}
+                      <Link to="/car-listing-pro">
+                        Car Pro
+                        {/* {t("header-navigation.cars")} */}
                       </Link>
                       {/* <ul>
                         <li>
