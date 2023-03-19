@@ -19,8 +19,8 @@ const AboutPage = () => {
         pagesub={t("header-navigation.about")}
       />
       <AboutPageList />
-      <Promo />
-      <Team />
+
+      {/* <Team /> */}
       <Footer />
     </Fragment>
   );

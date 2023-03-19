@@ -23,8 +23,8 @@
 }
 
 .quick-links {
-  float: left;
-  width: 45%;
+  float: center;
+
 }
 
 .footer-logo {
@@ -200,6 +200,7 @@
 @media (max-width: 767px) {
   .single-footer {
     margin: 20px 0;
+    text-align: center;
   }
   .copyright {
     text-align: center;
@@ -211,6 +212,7 @@
   .newsletter_box form {
     width: 100%;
   }
+  
 }
 @media only screen and (min-width: 480px) and (max-width: 767px) {
   .single-footer {

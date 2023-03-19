@@ -86,10 +86,10 @@ const Contact = () => {
             <div className="contact-right">
               <h3>{t("contact_page.info_title")} </h3>
               <div className="contact-details">
-                <p>
+                {/* <p>
                   <i className="fa fa-map-marker" /> 125 Big fella St. Road, New
                   York, Hi 5654775{" "}
-                </p>
+                </p> */}
                 <div className="single-contact-btn">
                   <h4>{t("contact_page.info_email")}</h4>
                   <a href="mailto:info@example.com">info@example.com</a>

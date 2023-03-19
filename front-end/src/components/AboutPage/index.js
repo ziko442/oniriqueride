@@ -7,6 +7,7 @@ import img1 from "../../img/about-page.jpg";
 import img2 from "../../img/cars.png";
 
 import "./style.css";
+import Promo from "../Promo";
 
 const AboutPage = () => {
   const { t } = useTranslation();
@@ -53,7 +54,7 @@ const AboutPage = () => {
           </Row>
         </Container>
       </section>
-
+      <Promo />
       <section className="oniriqueride-about-promo section_70">
         <Container>
           <Row>

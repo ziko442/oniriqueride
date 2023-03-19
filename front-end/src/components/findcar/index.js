@@ -11,6 +11,8 @@ import {
 import { calculatePrice } from "./PriceCalculator";
 
 import "./style.css";
+import "./cutomStyle.css";
+import axios from "axios";
 
 registerLicense(process.env.REACT_APP_SYNCFUSION);
 
@@ -68,6 +70,13 @@ const FindCar = (props) => {
       }
     );
   }
+  axios.get("/api/orders")
+  .then(response => {
+    console.log(response.data.orders[0].user);
+  })
+  .catch(error => {
+    console.error(error);
+  });
 
 
   // const SubmitHandler = (e) => {
@@ -93,7 +102,7 @@ const FindCar = (props) => {
                     activeKey={key}
                     onSelect={(k) => setKey(k)}
                   >
-                    <Tab eventKey="one-way" title="One Way">
+                    <Tab className="one-way" eventKey="one-way" title="One Way" >
                       <div className="find-form">
                         <form onSubmit={SubmitHandler}>
                           <Row>
@@ -150,7 +159,7 @@ const FindCar = (props) => {
                         </form>
                       </div>
                     </Tab>
-                    <Tab eventKey="by-hour" title="By The Hour">
+                    <Tab className="by-hour" eventKey="by-hour" title="By The Hour">
                       <div className="find-form">
                         <form onSubmit={SubmitHandler}>
                           <Row>
@@ -211,7 +220,10 @@ const FindCar = (props) => {
             </div>
           </Col>
         </Row>
-        <div hidden>{distance}{duration} {price}</div>
+        <div hidden>
+          {distance}
+          {duration} {price}
+        </div>
       </Container>
     </section>
   );
