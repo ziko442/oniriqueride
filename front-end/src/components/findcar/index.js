@@ -12,7 +12,7 @@ import { calculatePrice } from "./PriceCalculator";
 
 import "./style.css";
 import "./cutomStyle.css";
-import axios from "axios";
+// import axios from "axios";
 
 registerLicense(process.env.REACT_APP_SYNCFUSION);
 
@@ -41,6 +41,7 @@ const FindCar = (props) => {
       const place = endAutocomplete.getPlace();
       setEndAddress(place.formatted_address);
     });
+    
   }, [props.google.maps.places.Autocomplete]);
 
   // Start Address: 123 Main St, Anytown, USA
@@ -70,13 +71,7 @@ const FindCar = (props) => {
       }
     );
   }
-  axios.get("/api/orders")
-  .then(response => {
-    console.log(response.data.orders[0].user);
-  })
-  .catch(error => {
-    console.error(error);
-  });
+
 
 
   // const SubmitHandler = (e) => {
@@ -102,7 +97,7 @@ const FindCar = (props) => {
                     activeKey={key}
                     onSelect={(k) => setKey(k)}
                   >
-                    <Tab className="one-way" eventKey="one-way" title="One Way" >
+                    <Tab eventKey="one-way" title="One Way" >
                       <div className="find-form">
                         <form onSubmit={SubmitHandler}>
                           <Row>
@@ -159,7 +154,7 @@ const FindCar = (props) => {
                         </form>
                       </div>
                     </Tab>
-                    <Tab className="by-hour" eventKey="by-hour" title="By The Hour">
+                    <Tab  eventKey="by-hour" title="By The Hour">
                       <div className="find-form">
                         <form onSubmit={SubmitHandler}>
                           <Row>
