@@ -40,13 +40,13 @@ const CarList = () => {
       <Container fluid>
       <Row>
         <Col style={headerStyle}>
-          <span class="shortened">Harry Reid International Airport Las Vegas (LAS), Paradise Rd 575, 89119 NV, Las Vegas</span>
-          <span class="shortened">|</span>
-          <span class="shortened">JetSuiteX - Atlantic Aviation - Pick Up Only, Koval Lane Hangar 7C 5050, 89119 Las-Vegas, NV</span>
-          <span class="shortened">|</span>
-          <span class="shortened">Duration: 8 minutes – Distance: 4.3 km</span>
-          <span class="shortened">|</span>
-          <span class="shortened">Mar 19, 2023 3:50PM (15:50)</span>
+          <span className="shortened">Harry Reid International Airport Las Vegas (LAS), Paradise Rd 575, 89119 NV, Las Vegas</span>
+          <span className="shortened">|</span>
+          <span className="shortened">JetSuiteX - Atlantic Aviation - Pick Up Only, Koval Lane Hangar 7C 5050, 89119 Las-Vegas, NV</span>
+          <span className="shortened">|</span>
+          <span className="shortened">Duration: 8 minutes – Distance: 4.3 km</span>
+          <span className="shortened">|</span>
+          <span className="shortened">Mar 19, 2023 3:50PM (15:50)</span>
 
         </Col>
       </Row>
@@ -120,10 +120,10 @@ const CarList = () => {
                   </div>
                 </div>
                 <div className="vehicle-price-info col-4 mx-1 px-0">
-                  <div class="card bg-card px-1">
-                    <div class="card-body px-2">
-                      <h5 class="card-subtitle mt-0 vh-price float-end" style={{ fontWeight:'bold' }}>216.30 USD</h5>
-                      <div class="card-text mb-3 float-end" style={{fontSize:'10px',display:'inline-block'}}>All prices include VAT, fees & tip.</div>
+                  <div className="card bg-card px-1">
+                    <div className="card-body px-2">
+                      <h5 className="card-subtitle mt-0 vh-price float-end" style={{ fontWeight:'bold' }}>216.30 USD</h5>
+                      <div className="card-text mb-3 float-end" style={{fontSize:'10px',display:'inline-block'}}>All prices include VAT, fees & tip.</div>
                       <button className="btn btn-select container">Select</button>
                     </div>
                   </div>
