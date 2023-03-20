@@ -15,7 +15,8 @@ import {
 import "./style.css";
 import "./customStyle.css";
 
-const CarList = () => {
+const CarList = (props) => {
+  const func = props.func;
   // const { t } = useTranslation();
 
   // const SubmitHandler = (e) => {
@@ -40,9 +41,9 @@ const CarList = () => {
       <Container fluid>
       <Row>
         <Col style={headerStyle}>
-          <span className="shortened">Harry Reid International Airport Las Vegas (LAS), Paradise Rd 575, 89119 NV, Las Vegas</span>
+          <span className="shortened">{func.startAddress}</span>
           <span className="shortened">|</span>
-          <span className="shortened">JetSuiteX - Atlantic Aviation - Pick Up Only, Koval Lane Hangar 7C 5050, 89119 Las-Vegas, NV</span>
+          <span className="shortened">{func.endAddress}</span>
           <span className="shortened">|</span>
           <span className="shortened">Duration: 8 minutes – Distance: 4.3 km</span>
           <span className="shortened">|</span>

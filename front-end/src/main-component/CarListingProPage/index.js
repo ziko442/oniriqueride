@@ -5,9 +5,11 @@ import Header from "../../components/header";
 import PageTitle from "../../components/PageTitle";
 import CarListPro from "../../components/CarListPro";
 import Footer from "../../components/Footer";
+import { useLocation } from "react-router-dom";
 
 const CarListingProPage = () => {
   const { t } = useTranslation();
+  const location = useLocation();
 
   return (
     <Fragment>
@@ -16,7 +18,8 @@ const CarListingProPage = () => {
         pageTitle={t("header-navigation.car_listing")}
         pagesub={t("header-navigation.car_listing")}
       />
-      <CarListPro />
+      
+      <CarListPro  func={location.state}/>
       <Footer />
     </Fragment>
   );

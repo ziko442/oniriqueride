@@ -8,15 +8,26 @@ import {
   TimePickerComponent,
 } from "@syncfusion/ej2-react-calendars";
 
+import CarList from "../CarListPro";
+
 import { calculatePrice } from "./PriceCalculator";
 
 import "./style.css";
 import "./cutomStyle.css";
+import { useNavigate } from "react-router-dom";
+
 // import axios from "axios";
 
 registerLicense(process.env.REACT_APP_SYNCFUSION);
 
 const FindCar = (props) => {
+  const navigate = useNavigate();
+
+  const [formData, setFormData] = useState({
+    startAddress: "",
+    endAddress: "",
+  });
+
   const [key, setKey] = useState("one-way");
   const [distance, setDistance] = useState(null);
   const [duration, setDuration] = useState(null);
@@ -26,12 +37,24 @@ const FindCar = (props) => {
   const { t } = useTranslation();
 
   useEffect(() => {
+    
+  }, [props.google.maps.places.Autocomplete]);
+
+  // Start Address: 123 Main St, Anytown, USA
+  // End Address: 456 Elm St, Another Town, USA
+
+  // handle form input changes
+  const handleInputChange = (event) => {
     const startAutocomplete = new props.google.maps.places.Autocomplete(
       document.getElementById("start-input")
     );
     startAutocomplete.addListener("place_changed", () => {
       const place = startAutocomplete.getPlace();
       setStartAddress(place.formatted_address);
+      document.getElementById("start-input").value = place.name
+      setFormData({
+        startAddress: event.target.value
+      })
     });
 
     const endAutocomplete = new props.google.maps.places.Autocomplete(
@@ -40,12 +63,14 @@ const FindCar = (props) => {
     endAutocomplete.addListener("place_changed", () => {
       const place = endAutocomplete.getPlace();
       setEndAddress(place.formatted_address);
+      document.getElementById("end-input").value = place.name
+      setFormData({
+        ...formData,
+        endAddress: event.target.value
+      })
     });
-    
-  }, [props.google.maps.places.Autocomplete]);
 
-  // Start Address: 123 Main St, Anytown, USA
-  // End Address: 456 Elm St, Another Town, USA
+  };
 
   function SubmitHandler(event) {
     event.preventDefault();
@@ -70,13 +95,17 @@ const FindCar = (props) => {
         }
       }
     );
+    // pass form data to CarList component
+    navigate("/car-listing-pro", {state: formData});
+    console.log(formData);
+    
   }
-
-
 
   // const SubmitHandler = (e) => {
   //   e.preventDefault();
   // };
+  
+
 
   return (
     <section className="oniriqueride-find-area">
@@ -97,17 +126,19 @@ const FindCar = (props) => {
                     activeKey={key}
                     onSelect={(k) => setKey(k)}
                   >
-                    <Tab eventKey="one-way" title="One Way" >
+                    <Tab eventKey="one-way" title="One Way">
                       <div className="find-form">
                         <form onSubmit={SubmitHandler}>
                           <Row>
                             <Col md={4}>
                               <p>
                                 <input
+                                  name="startAddress"
                                   id="start-input"
-                                  defaultValue={startAddress}
+                                  defaultValue={formData.startAddress}
                                   type="text"
                                   placeholder={t("from_address")}
+                                  onChange={handleInputChange}
                                 />
                               </p>
                             </Col>
@@ -115,9 +146,11 @@ const FindCar = (props) => {
                               <p>
                                 <input
                                   id="end-input"
-                                  defaultValue={endAddress}
+                                  name="endAddress"
+                                  defaultValue={formData.endAddress}
                                   type="text"
                                   placeholder={t("to_address")}
+                                  onChange={handleInputChange}
                                 />
                               </p>
                             </Col>
@@ -154,7 +187,7 @@ const FindCar = (props) => {
                         </form>
                       </div>
                     </Tab>
-                    <Tab  eventKey="by-hour" title="By The Hour">
+                    {/* <Tab eventKey="by-hour" title="By The Hour">
                       <div className="find-form">
                         <form onSubmit={SubmitHandler}>
                           <Row>
@@ -208,7 +241,7 @@ const FindCar = (props) => {
                           </Row>
                         </form>
                       </div>
-                    </Tab>
+                    </Tab> */}
                   </Tabs>
                 </Col>
               </Row>
