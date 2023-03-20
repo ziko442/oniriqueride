@@ -8,7 +8,6 @@ import {
   TimePickerComponent,
 } from "@syncfusion/ej2-react-calendars";
 
-import CarList from "../CarListPro";
 
 import { calculatePrice } from "./PriceCalculator";
 
