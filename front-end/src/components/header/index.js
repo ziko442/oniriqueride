@@ -213,13 +213,13 @@ const Header = () => {
                         </li>
                       </ul> */}
                     </li>
-                    <li>
-                      {/* <Link to="/" onClick={onClick}> */}
+                    {/* <li>
+                      <Link to="/" onClick={onClick}>
                       <Link to="/car-listing-pro">
                         Car Pro
-                        {/* {t("header-navigation.cars")} */}
+                        {t("header-navigation.cars")}
                       </Link>
-                      {/* <ul>
+                      <ul>
                         <li>
                           <Link to="/car-listing">
                             {t("header-navigation.car_listing")}
@@ -230,8 +230,8 @@ const Header = () => {
                             {t("header-navigation.car_booking")}
                           </Link>
                         </li>
-                      </ul> */}
-                    </li>
+                      </ul>
+                    </li> */}
                     {/* <li>
                       <Link to="/gallery">
                         {t("header-navigation.gallery")}
