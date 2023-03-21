@@ -14,9 +14,13 @@ import {
 
 import "./style.css";
 import "./customStyle.css";
+import { calculatePrice } from "./PriceCalculator";
 
 const CarList = (props) => {
   const func = props.func;
+
+  const price = calculatePrice(func.distanceValue, func.durationValue);
+  console.log(price);
   // const { t } = useTranslation();
 
   // const SubmitHandler = (e) => {
@@ -35,17 +39,19 @@ const CarList = (props) => {
     fontSize: "13px"
   };
 
+
+
   return (
     <section className="oniriqueride-car-listing section_70">
        {/* start header */}
       <Container fluid>
       <Row>
         <Col style={headerStyle}>
-          <span className="shortened">{func.startAddress}</span>
+          <span className="shortened">{func.formData.startAddress}</span>
+          <span className="shortened">{">>"}</span>
+          <span className="shortened">{func.formData.endAddress}</span>
           <span className="shortened">|</span>
-          <span className="shortened">{func.endAddress}</span>
-          <span className="shortened">|</span>
-          <span className="shortened">Duration: 8 minutes – Distance: 4.3 km</span>
+          <span className="shortened">Duration: {price.minutes.toFixed(0)} minutes – Distance: {price.miles.toFixed(0)} miles</span>
           <span className="shortened">|</span>
           <span className="shortened">Mar 19, 2023 3:50PM (15:50)</span>
 
@@ -123,7 +129,7 @@ const CarList = (props) => {
                 <div className="vehicle-price-info col-4 mx-1 px-0">
                   <div className="card bg-card px-1">
                     <div className="card-body px-2">
-                      <h5 className="card-subtitle mt-0 vh-price float-end" style={{ fontWeight:'bold' }}>216.30 USD</h5>
+                      <h5 className="card-subtitle mt-0 vh-price float-end" style={{ fontWeight:'bold' }}>{price.price.toFixed(2)} USD</h5>
                       <div className="card-text mb-3 float-end" style={{fontSize:'10px',display:'inline-block'}}>All prices include VAT, fees & tip.</div>
                       <button className="btn btn-select container">Select</button>
                     </div>

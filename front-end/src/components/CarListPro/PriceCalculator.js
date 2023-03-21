@@ -8,6 +8,7 @@ export function calculatePrice(distance, duration) {
   const miles = distance / 1609.34;
   const minutes = duration / 60;
   const price = (miles * pricePerMile) + (minutes * pricePerMinute);
-  return price.toFixed(2);
+  // return price.toFixed(2);
+  return {price, minutes, miles};
 }
 

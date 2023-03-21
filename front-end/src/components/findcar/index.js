@@ -8,8 +8,7 @@ import {
   TimePickerComponent,
 } from "@syncfusion/ej2-react-calendars";
 
-
-import { calculatePrice } from "./PriceCalculator";
+// import { calculatePrice } from "./PriceCalculator";
 
 import "./style.css";
 import "./cutomStyle.css";
@@ -25,19 +24,19 @@ const FindCar = (props) => {
   const [formData, setFormData] = useState({
     startAddress: "",
     endAddress: "",
+    distance: null,
+    duration: null,
   });
 
   const [key, setKey] = useState("one-way");
   const [distance, setDistance] = useState(null);
   const [duration, setDuration] = useState(null);
-  const [price, setPrice] = useState(null);
+  // const [price, setPrice] = useState(null);
   const [startAddress, setStartAddress] = useState("");
   const [endAddress, setEndAddress] = useState("");
   const { t } = useTranslation();
 
-  useEffect(() => {
-    
-  }, [props.google.maps.places.Autocomplete]);
+  useEffect(() => {}, [props.google.maps.places.Autocomplete]);
 
   // Start Address: 123 Main St, Anytown, USA
   // End Address: 456 Elm St, Another Town, USA
@@ -50,10 +49,10 @@ const FindCar = (props) => {
     startAutocomplete.addListener("place_changed", () => {
       const place = startAutocomplete.getPlace();
       setStartAddress(place.formatted_address);
-      document.getElementById("start-input").value = place.name
+      document.getElementById("start-input").value = place.name;
       setFormData({
-        startAddress: event.target.value
-      })
+        startAddress: event.target.value,
+      });
     });
 
     const endAutocomplete = new props.google.maps.places.Autocomplete(
@@ -62,13 +61,12 @@ const FindCar = (props) => {
     endAutocomplete.addListener("place_changed", () => {
       const place = endAutocomplete.getPlace();
       setEndAddress(place.formatted_address);
-      document.getElementById("end-input").value = place.name
+      document.getElementById("end-input").value = place.name;
       setFormData({
         ...formData,
-        endAddress: event.target.value
-      })
+        endAddress: event.target.value,
+      });
     });
-
   };
 
   function SubmitHandler(event) {
@@ -90,20 +88,17 @@ const FindCar = (props) => {
           const durationValue = response.rows[0].elements[0].duration.value;
           setDistance(response.rows[0].elements[0].distance.text);
           setDuration(response.rows[0].elements[0].duration.text);
-          setPrice(calculatePrice(distanceValue, durationValue));
+          // setPrice(calculatePrice(distanceValue, durationValue));
+
+          navigate("/car-listing-pro", { state: {formData, distanceValue, durationValue} });
+          console.log(formData);
         }
       }
     );
     // pass form data to CarList component
-    navigate("/car-listing-pro", {state: formData});
-    console.log(formData);
     
   }
 
-  // const SubmitHandler = (e) => {
-  //   e.preventDefault();
-  // };
-  
 
 
   return (
@@ -249,7 +244,7 @@ const FindCar = (props) => {
         </Row>
         <div hidden>
           {distance}
-          {duration} {price}
+          {duration} 
         </div>
       </Container>
     </section>
