@@ -2,7 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { Container, Row, Col } from "react-bootstrap";
 import { FaCheck } from "react-icons/fa";
-import signature from "../../img/signature.png";
+// import signature from "../../img/signature.png";
 import Img1 from "../../img/about.png";
 import "./style.css";
 const About = () => {
@@ -44,7 +44,7 @@ const About = () => {
                   </li>
                 </ul>
               </div>
-              <div className="about-signature">
+              {/* <div className="about-signature">
                 <div className="signature-left">
                   <img src={signature} alt="signature" />
                 </div>
@@ -52,7 +52,7 @@ const About = () => {
                   <h3>Hiba</h3>
                   <p>{t("president")}</p>
                 </div>
-              </div>
+              </div> */}
             </div>
           </Col>
           <Col lg={6}>
