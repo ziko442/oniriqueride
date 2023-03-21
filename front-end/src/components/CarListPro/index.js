@@ -6,14 +6,14 @@ import { Container, Row, Col } from "react-bootstrap";
 
 import "./style.css";
 import "./customStyle.css";
-import { calculatePrice } from "./PriceCalculator";
+import { UnitsConverter } from "./UnitsConverter";
 import CarCategory from "./CarCategory";
 
 const CarList = (props) => {
   const func = props.func;
 
-  const price = calculatePrice(func.distanceValue, func.durationValue);
-  console.log(price);
+  const units = UnitsConverter(func.distanceValue, func.durationValue);
+  console.log(units);
   // const { t } = useTranslation();
 
   // const SubmitHandler = (e) => {
@@ -46,7 +46,7 @@ const CarList = (props) => {
           <span className="shortened">{">>"}</span>
           <span className="shortened">{func.formData.endAddress}</span>
           <span className="shortened">|</span>
-          <span className="shortened">Duration: {price.minutes.toFixed(0)} minutes – Distance: {price.miles.toFixed(0)} miles</span>
+          <span className="shortened">Duration: {units.minutes.toFixed(0)} minutes – Distance: {units.miles.toFixed(0)} miles</span>
           <span className="shortened">|</span>
           <span className="shortened">Mar 19, 2023 3:50PM (15:50)</span>
 
@@ -56,7 +56,7 @@ const CarList = (props) => {
       {/* end header */}
       </Container>
 
-      <CarCategory price={price.price.toFixed(2)} />
+      <CarCategory units={units} />
     </section>
   );
 };

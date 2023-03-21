@@ -12,6 +12,8 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
+import {PriceCalculator} from './PriceCalculator'; 
+
 export default function CarCategory(props) {
   const [data, setData] = useState([]);
   const car = props;
@@ -29,6 +31,7 @@ export default function CarCategory(props) {
   }, []);
 
   console.log(data[0]);
+  
 
   return (
     <div>
@@ -117,7 +120,7 @@ export default function CarCategory(props) {
                         className="card-subtitle mt-0 vh-price float-end"
                         style={{ fontWeight: "bold" }}
                       >
-                        {car.price} USD
+                        {PriceCalculator(item.costPerMile, item.costPerMinute, car.units.miles , car.units.minutes)} USD
                       </h5>
                       <div
                         className="card-text mb-3 float-end"
