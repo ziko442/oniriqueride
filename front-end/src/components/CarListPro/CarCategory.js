@@ -7,8 +7,9 @@ import {
   FaUserFriends,
   FaClock,
   FaTimesCircle,
-  FaMedal,
+  // FaMedal,
   FaPrescriptionBottleAlt,
+  FaWifi,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
@@ -77,10 +78,10 @@ export default function CarCategory(props) {
 
                   <div className="d-flex vehicle-info-type">
                     <div className="float-start">
-                      <FaMedal className="v-info-icon" />
+                      <FaWifi className="v-info-icon" />
                     </div>
                     <div className="float-end mx-2 vehicle-info-example">
-                      Includes Meet &amp; Greet
+                      Includes WIFI
                     </div>
                   </div>
 

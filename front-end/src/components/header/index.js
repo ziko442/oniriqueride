@@ -197,9 +197,9 @@ const Header = () => {
                     </li>
                     <li>
                       {/* <Link to="/" onClick={onClick}> */}
-                      <Link to="/service">
+                      {/* <Link to="/service">
                         {t("header-navigation.service")}
-                      </Link>
+                      </Link> */}
                       {/* <ul>
                         <li>
                           <Link to="/service">

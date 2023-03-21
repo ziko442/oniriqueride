@@ -17,10 +17,10 @@ const menus = [
     link: "/about",
   },
 
-  {
-    id: 3,
-    title: "Service",
-    link: "/service",
+  // {
+    // id: 3,
+    // title: "Service",
+    // link: "/service",
     // submenu: [
     //   {
     //     id: 31,
@@ -33,7 +33,7 @@ const menus = [
     //     link: "/service-single",
     //   },
     // ],
-  },
+  // },
   {
     id: 4,
     title: "Cars",
