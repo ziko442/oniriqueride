@@ -1,19 +1,16 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Container } from "react-bootstrap";
-
+import { Container, Col, Row, Card, Button } from "react-bootstrap";
 import {
   FaWallet,
   FaUserFriends,
   FaClock,
   FaTimesCircle,
-  // FaMedal,
   FaPrescriptionBottleAlt,
   FaWifi,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
-
-import {PriceCalculator} from './PriceCalculator'; 
+import { PriceCalculator } from "./PriceCalculator";
 
 export default function CarCategory(props) {
   const [data, setData] = useState([]);
@@ -32,114 +29,97 @@ export default function CarCategory(props) {
   }, []);
 
   console.log(data[0]);
-  
 
   return (
-    <div>
+    <Container>
       {data.map((item) => (
-        <Container className="container-car-categ" key={item._id}>
-          <div className="vehicle">
-            <div className="vehicle-title">
-              <div className="car-cat-title"> {item.name}</div>
-              <div className="vehicle-desc">
-                {" "}
-                {item.description}{" "}
-              </div>
-              <div className="vehicle-capacity">
-                <div className="vehicle-capacity-type">
-                  <div className="float-start d-flex">
-                    <FaWallet className="fa-icon" />
-                    <div>max. {item.maxLuggage}</div>
+        <Card key={item._id} className="mt-4">
+          <Card.Body>
+            <Row>
+              <Col lg="12" md="12" xs="12">
+                <Card.Title>{item.name}</Card.Title>
+                <Card.Text>{item.description}</Card.Text>
+                <Row className="mb-3">
+                  <Col>
+                    <div className="d-flex">
+                      <FaWallet className="fa-icon" />
+                      <div className="ms-2">max. {item.maxLuggage}</div>
+                    </div>
+                  </Col>
+                  <Col>
+                    <div className="d-flex justify-content-end">
+                      <FaUserFriends className="fa-icon" />
+                      <div className="ms-2">max. {item.maxPassengers}</div>
+                    </div>
+                  </Col>
+                </Row>
+              </Col>
+              {/* <hr /> */}
+            </Row>
+            <hr />
+            <Row>
+              <Col lg="4" md="12" xs="12">
+                <div className="d-flex mb-2">
+                  <FaClock className="v-info-icon" />
+                  <div className="ms-2">
+                    Free 60 minutes wait time for airport pickups, 15 mins for
+                    all others
                   </div>
                 </div>
-                <div className="vehicle-capacity-type">
-                  <div className="float-end d-flex">
-                    <FaUserFriends className="fa-icon" />
-                    <div>max. {item.maxPassengers}</div>
+                <div className="d-flex mb-2">
+                  <FaWifi className="v-info-icon" />
+                  <div className="ms-2">Includes WIFI</div>
+                </div>
+                <div className="d-flex mb-2">
+                  <FaTimesCircle className="v-info-icon" />
+                  <div className="ms-2">
+                    Free cancellation up until 1 hour before pickup
                   </div>
                 </div>
-              </div>
-            </div>
-            <div
-              className="px-0 col-12"
-              style={{ height: "200px", justifyContent: "space-between" }}
-            >
-              <div className="vehicle-infos">
-                <div className="vehicle-info-text mr-1 col-3">
-                  <div className="d-flex vehicle-info-type">
-                    <div className="float-start">
-                      <FaClock className="v-info-icon" />
-                    </div>
-                    <div className="float-end mx-2 vehicle-info-example">
-                      Free 60 minutes wait time for airport pickups, 15 mins for
-                      all others
-                    </div>
-                  </div>
+                <div className="d-flex">
+                  <FaPrescriptionBottleAlt className="v-info-icon" />
+                  <div className="ms-2">Complimentary bottled water</div>
+                </div>
+              </Col>
 
-                  <div className="d-flex vehicle-info-type">
-                    <div className="float-start">
-                      <FaWifi className="v-info-icon" />
-                    </div>
-                    <div className="float-end mx-2 vehicle-info-example">
-                      Includes WIFI
-                    </div>
-                  </div>
+              <Col
+                lg="4"
+                className="d-flex justify-content-between align-items-start"
+              >
+                <div>
+                  <Card.Img
+                    variant="top"
+                    src={`http://localhost:3001/${item.imageUrl}`}
+                    style={{ width: "400px" }}
+                  />
+                </div>
+              </Col>
+              <Col lg="4" className="d-flex flex-column">
+                <div className="p-2">
+                  <h5 className="mb-0">
+                    $
+                    {PriceCalculator(
+                      item.costPerMile,
+                      item.costPerMinute,
+                      car.units.miles,
+                      car.units.minutes
+                    )}
+                  </h5>
+                  <small className="text-muted">
+                    All prices include VAT, fees & tip.
+                  </small>
+                </div>
 
-                  <div className="d-flex vehicle-info-type">
-                    <div className="float-start">
-                      <FaTimesCircle className="v-info-icon" />
-                    </div>
-                    <div className="float-end mx-2 vehicle-info-example">
-                      Free cancellation up until 1 hour before pickup
-                    </div>
-                  </div>
-
-                  <div className="d-flex vehicle-info-type">
-                    <div className="float-start">
-                      <FaPrescriptionBottleAlt className="v-info-icon" />
-                    </div>
-                    <div className="float-end mx-2 vehicle-info-example">
-                      Complimentary bottled water
-                    </div>
-                  </div>
+                <div className="p-2">
+                  <Button variant="primary" className="mt-3">
+                    Select
+                  </Button>
                 </div>
-                <div className="vehicle-image col-5">
-                  <div>
-                    <Link to="/car-booking">
-                      <img
-                        className="vehicle-image-ref"
-                        src={'http://localhost:3001/'+item.imageUrl}
-                        alt="offer 1"
-                      />
-                    </Link>
-                  </div>
-                </div>
-                <div className="vehicle-price-info col-4 mx-1 px-0">
-                  <div className="card bg-card px-1">
-                    <div className="card-body px-2">
-                      <h5
-                        className="card-subtitle mt-0 vh-price float-end"
-                        style={{ fontWeight: "bold" }}
-                      >
-                        {PriceCalculator(item.costPerMile, item.costPerMinute, car.units.miles , car.units.minutes)} USD
-                      </h5>
-                      <div
-                        className="card-text mb-3 float-end"
-                        style={{ fontSize: "10px", display: "inline-block" }}
-                      >
-                        All prices include VAT, fees & tip.
-                      </div>
-                      <button className="btn btn-select container">
-                        Select
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Container>
+              </Col>
+            </Row>
+          </Card.Body>
+        </Card>
       ))}
-    </div>
+    </Container>
   );
 }
