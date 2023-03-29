@@ -9,7 +9,7 @@ import {
   FaPrescriptionBottleAlt,
   FaWifi,
 } from "react-icons/fa";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { PriceCalculator } from "./PriceCalculator";
 
 export default function CarCategory(props) {
@@ -37,18 +37,15 @@ export default function CarCategory(props) {
           <Card.Body>
             <Row>
               <Col lg="12" md="12" xs="12">
-                <Card.Title>{item.name}</Card.Title>
-                <Card.Text>{item.description}</Card.Text>
+                <Card.Title className="text-dark">{item.name}</Card.Title>
+                <Card.Text className="text-dark">{item.description}</Card.Text>
                 <Row className="mb-3">
                   <Col>
-                    <div className="d-flex">
+                    <div className="d-flex align-items-center">
                       <FaWallet className="fa-icon" />
                       <div className="ms-2">max. {item.maxLuggage}</div>
-                    </div>
-                  </Col>
-                  <Col>
-                    <div className="d-flex justify-content-end">
-                      <FaUserFriends className="fa-icon" />
+                      <div className="ms-2">/</div>
+                      <FaUserFriends className="fa-icon ms-2" />
                       <div className="ms-2">max. {item.maxPassengers}</div>
                     </div>
                   </Col>
@@ -59,24 +56,24 @@ export default function CarCategory(props) {
             <hr />
             <Row>
               <Col lg="4" md="12" xs="12">
-                <div className="d-flex mb-2">
+                <div className="d-flex align-items-center mb-2">
                   <FaClock className="v-info-icon" />
                   <div className="ms-2">
                     Free 60 minutes wait time for airport pickups, 15 mins for
                     all others
                   </div>
                 </div>
-                <div className="d-flex mb-2">
+                <div className="d-flex align-items-center mb-2">
                   <FaWifi className="v-info-icon" />
                   <div className="ms-2">Includes WIFI</div>
                 </div>
-                <div className="d-flex mb-2">
+                <div className="d-flex align-items-center mb-2">
                   <FaTimesCircle className="v-info-icon" />
                   <div className="ms-2">
                     Free cancellation up until 1 hour before pickup
                   </div>
                 </div>
-                <div className="d-flex">
+                <div className="d-flex align-items-center">
                   <FaPrescriptionBottleAlt className="v-info-icon" />
                   <div className="ms-2">Complimentary bottled water</div>
                 </div>
@@ -94,8 +91,8 @@ export default function CarCategory(props) {
                   />
                 </div>
               </Col>
-              <Col lg="4" className="d-flex flex-column">
-                <div className="p-2">
+              <Col lg="4" className="d-flex flex-column bg-light rounded p-3">
+                <div className="p-2 text-center text-dark">
                   <h5 className="mb-0">
                     $
                     {PriceCalculator(
@@ -110,8 +107,11 @@ export default function CarCategory(props) {
                   </small>
                 </div>
 
-                <div className="p-2">
-                  <Button variant="primary" className="mt-3">
+                <div className="p-2 text-center">
+                  <Button
+                    variant="primary"
+                    className="btn button-gradient btn-lg "
+                  >
                     Select
                   </Button>
                 </div>
