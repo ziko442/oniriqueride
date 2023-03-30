@@ -10,7 +10,7 @@ import {
   FaWifi,
 } from "react-icons/fa";
 // import { Link } from "react-router-dom";
-import { PriceCalculator } from "./PriceCalculator";
+import { PriceCalculator } from "../PriceCalculator";
 
 export default function CarCategory(props) {
   const [data, setData] = useState([]);
@@ -111,6 +111,7 @@ export default function CarCategory(props) {
                   <Button
                     variant="primary"
                     className="btn button-gradient btn-lg "
+                    onClick={car.nextStep}
                   >
                     Select
                   </Button>
