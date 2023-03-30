@@ -4,7 +4,7 @@ import { Button } from "react-bootstrap";
 const Checkout = ({ previousStep }) => {
   return (
     <div>
-      <p>Checkout 3</p>
+      <p>Checkout 5</p>
       <Button variant="secondary" onClick={previousStep}>
         Previous
       </Button>
