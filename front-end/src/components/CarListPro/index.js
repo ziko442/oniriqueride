@@ -48,6 +48,8 @@ const CarList = (props) => {
     setStep(step - 1);
   };
 
+  const token = localStorage.getItem("token");
+
   const renderStep = () => {
     switch (step) {
       case 1:
@@ -86,6 +88,11 @@ const CarList = (props) => {
             className="justify-content-center"
           >
             {navigationItems.map((item) => (
+               (item.title==="Sign in" && token) ?(
+                <div></div>
+               ):(
+                
+              
               <Nav.Item key={item.id}>
                 <Nav.Link
                   eventKey={item.id}
@@ -94,7 +101,7 @@ const CarList = (props) => {
                 >
                   {item.title}
                 </Nav.Link>
-              </Nav.Item>
+              </Nav.Item>)
             ))}
           </Nav>
         </Card.Header>

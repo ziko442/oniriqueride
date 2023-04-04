@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import i18next from "i18next";
@@ -14,7 +14,7 @@ import {
 import MobileMenu from "../../components/MobileMenu";
 
 import Logo from "../../img/logo.png";
-// import globe from "../../img/globe.png";
+import globe from "../../img/globe.png";
 import clock from "../../img/clock.png";
 import "flag-icon-css/css/flag-icons.min.css";
 import "./style.css";
@@ -46,14 +46,16 @@ const Header = () => {
   // const onClick = (e) => {
   //   e.preventDefault();
   // };
+  const [token, setToken] = useState(localStorage.getItem("token"));
 
   const { t } = useTranslation();
-  const token = localStorage.getItem("token");
-  const navigate = useNavigate();
+ 
+  // const navigate = useNavigate();
 
   const handleLogout = () => {
     localStorage.removeItem("token");
-    navigate("/");
+    setToken(null)
+    // navigate("/");
   };
 
   return (
@@ -152,15 +154,15 @@ const Header = () => {
             </Col>
             <Col lg={6} sm={9}>
               <div className="header-promo">
-                {/* <div className="single-header-promo">
+                <div className="single-header-promo">
                   <div className="header-promo-icon">
                     <img src={globe} alt="globe" />
                   </div>
                   <div className="header-promo-info">
                     <h3>Newyork, USA</h3>
-                    <p>{t("melbourne_city")}</p>
+                    <p>{t("newyork_city")}</p>
                   </div>
-                </div> */}
+                </div>
                 <div className="single-header-promo">
                   <div className="header-promo-icon">
                     <img src={clock} alt="clock" />
