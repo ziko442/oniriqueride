@@ -13,9 +13,9 @@ import "./style.css";
 const Hero = () => {
   const { t } = useTranslation();
 
-  const onClick = (e) => {
-    e.preventDefault();
-  };
+  // const onClick = (e) => {
+  //   e.preventDefault();
+  // };
 
   const settings = {
     dots: false,
