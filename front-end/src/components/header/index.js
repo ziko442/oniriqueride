@@ -71,7 +71,7 @@ const Header = () => {
               </div>
             </Col>
             <Col md={6}>
-              <div className="header-top-right">
+              {/* <div className="header-top-right">
                 {!token ? (
                   <Fragment>
                     <Link to="/login">
@@ -137,7 +137,7 @@ const Header = () => {
                   </Fragment>
                 )}
 
-              </div>
+              </div> */}
             </Col>
           </Row>
         </Container>
