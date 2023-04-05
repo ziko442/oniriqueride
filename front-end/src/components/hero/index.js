@@ -42,9 +42,9 @@ const Hero = () => {
                   <Row>
                     <Col md={6}>
                       <div className="slider-text">
-                        <p>{t("hero_slide_subtitle")}</p>
+                        <p style={{ fontSize: 24 ,lineHeight: 1.5}}>{t("hero_slide_subtitle")}</p>
                         <h2>{t("hero_slide_title")}</h2>
-                        <Link to="/" onClick={onClick} className="oniriqueride-btn">
+                        <Link to="/contact" className="oniriqueride-btn">
                           {t("researve_now")}
                         </Link>
                       </div>
@@ -66,9 +66,9 @@ const Hero = () => {
                   <Row>
                     <Col md={6}>
                       <div className="slider-text">
-                        <p>{t("hero_slide_subtitle2")}</p>
+                        <p style={{ fontSize: 24, lineHeight: 1.5 }}>{t("hero_slide_subtitle2")}</p>
                         <h2>{t("hero_slide_title")}</h2>
-                        <Link to="/" onClick={onClick} className="oniriqueride-btn">
+                        <Link to="/contact"  className="oniriqueride-btn">
                           {t("researve_now")}
                         </Link>
                       </div>
