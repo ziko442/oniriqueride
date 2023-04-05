@@ -40,7 +40,7 @@ const AboutPage = () => {
                   <div className="call-info">
                     <p>{t("need_any_help")}</p>
                     <h4>
-                      <a href="tel:12435424">(431) 529 2093</a>
+                      <a href="tel:9297771386">(929) 777-1386</a>
                     </h4>
                   </div>
                 </div>

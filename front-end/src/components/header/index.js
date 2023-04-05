@@ -66,7 +66,7 @@ const Header = () => {
             <Col md={6}>
               <div className="header-top-left">
                 <p>
-                  {t("need_help")} <FaPhoneAlt /> {t("call")}: +1 (917) 399-8691
+                  {t("need_help")} <FaPhoneAlt /> {t("call")}: (929) 777-1386
                 </p>
               </div>
             </Col>
@@ -159,7 +159,7 @@ const Header = () => {
                     <img src={globe} alt="globe" />
                   </div>
                   <div className="header-promo-info">
-                    <h3>Newyork, USA</h3>
+                    <h3>New York, USA</h3>
                     <p>{t("newyork_city")}</p>
                   </div>
                 </div>
@@ -168,8 +168,8 @@ const Header = () => {
                     <img src={clock} alt="clock" />
                   </div>
                   <div className="header-promo-info">
-                    <h3>Monday to Friday</h3>
-                    <p>9:00am - 6:00pm</p>
+                    <h3>Monday to Sunday</h3>
+                    <p>24/7</p>
                   </div>
                 </div>
               </div>

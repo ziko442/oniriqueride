@@ -96,7 +96,7 @@ const Contact = () => {
                 </div>
                 <div className="single-contact-btn">
                   <h4>{t("contact_page.info_call")}</h4>
-                  <a href="tel:+19173998691">+1 (917) 399-8691</a>
+                  <a href="tel:+19297771386">(929) 777-1386</a>
                 </div>
                 <div className="social-links-contact">
                   <h4>{t("contact_page.info_follow")}</h4>
