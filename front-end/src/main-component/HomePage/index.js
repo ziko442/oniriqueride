@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import Header from "../../components/header";
 import Hero from "../../components/hero";
-// import FindCar from "../../components/findcar";
+import FindCar from "../../components/findcar";
 import About from "../../components/About";
 // import Service from "../../components/Service";
 import Promo from "../../components/Promo";
@@ -17,7 +17,7 @@ const HomePage = () => {
     <Fragment>
       <Header />
       <Hero />
-      {/* <FindCar /> */}
+      <FindCar />
       <About />
       <div style={{ marginBottom: "30px"}}>
       <Promo />

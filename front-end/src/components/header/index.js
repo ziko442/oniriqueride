@@ -1,15 +1,15 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-// import i18next from "i18next";
-import { Col, Container, Row } from "react-bootstrap";
+import i18next from "i18next";
+import { Col, Container, Dropdown, Row } from "react-bootstrap";
 import {
   FaPhoneAlt,
-  // FaSignInAlt,
-  // FaSignOutAlt,
-  // FaUserAlt,
+  FaSignInAlt,
+  FaSignOutAlt,
+  FaUserAlt,
   // FaSearch,
-  // FaGlobe,
+  FaGlobe,
 } from "react-icons/fa";
 import MobileMenu from "../../components/MobileMenu";
 
@@ -20,23 +20,24 @@ import "flag-icon-css/css/flag-icons.min.css";
 import "./style.css";
 import "./customStyle.css";
 
-// const languages = [
-//   {
-//     code: "fr",
-//     name: "français",
-//     country_code: "fr",
-//   },
-//   {
-//     code: "en",
-//     name: "english",
-//     country_code: "us",
-//   },
-//   // {
-//   //   code: "pt",
-//   //   name: "português",
-//   //   country_code: "pt",
-//   // },
-// ];
+
+const languages = [
+  {
+    code: "fr",
+    name: "français",
+    country_code: "fr",
+  },
+  {
+    code: "en",
+    name: "english",
+    country_code: "us",
+  },
+  // {
+  //   code: "pt",
+  //   name: "português",
+  //   country_code: "pt",
+  // },
+];
 
 const Header = () => {
   // const SubmitHandler = (e) => {
@@ -46,17 +47,17 @@ const Header = () => {
   // const onClick = (e) => {
   //   e.preventDefault();
   // };
-  // const [token, setToken] = useState(localStorage.getItem("token"));
+  const [token, setToken] = useState(localStorage.getItem("token"));
 
   const { t } = useTranslation();
  
   // const navigate = useNavigate();
 
-  // const handleLogout = () => {
-  //   localStorage.removeItem("token");
-  //   setToken(null)
-  //   // navigate("/");
-  // };
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    setToken(null)
+    // navigate("/");
+  };
 
   return (
     <Fragment>
@@ -71,7 +72,7 @@ const Header = () => {
               </div>
             </Col>
             <Col md={6}>
-              {/* <div className="header-top-right">
+              <div className="header-top-right">
                 {!token ? (
                   <Fragment>
                     <Link to="/login">
@@ -137,7 +138,7 @@ const Header = () => {
                   </Fragment>
                 )}
 
-              </div> */}
+              </div>
             </Col>
           </Row>
         </Container>
