@@ -134,11 +134,11 @@ const Contact = () => {
     </p> */}
                 <div className="single-contact-btn">
                   <h4>{t("contact_page.info_email")}</h4>
-                  <a href="mailto:info@example.com">info@example.com</a>
+                  <a href="mailto:contact@oniriqueride.com">contact@oniriqueride.com</a>
                 </div>
                 <div className="single-contact-btn">
                   <h4>{t("contact_page.info_call")}</h4>
-                  <a href="tel:123456789">+(09)-2134-76894-9</a>
+                  <a href="tel:9297771386">(929) 777-1386</a>
                 </div>
                 <div className="social-links-contact">
                   <h4>{t("contact_page.info_follow")}</h4>

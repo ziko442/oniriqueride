@@ -1,5 +1,6 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+// import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 
 import Homepage from "../HomePage";
 import AboutPage from "../AboutPage";
@@ -22,7 +23,6 @@ import CarListingProPage from "../CarListingProPage";
 
 const AllRoute = () => {
   return (
-    <div>
       <Router>
         <Routes>
           <Route exact path="/" element={<Homepage />} />
@@ -44,10 +44,9 @@ const AllRoute = () => {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/contact" element={<ContactPage />} />
-          <Route path="/*" element={<ErrorPage />} />
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
       </Router>
-    </div>
   );
 };
 
