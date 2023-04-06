@@ -10,9 +10,9 @@ import "./style.css";
 const Promo = () => {
   const { t } = useTranslation();
 
-  const onClick = (e) => {
-    e.preventDefault();
-  };
+  // const onClick = (e) => {
+  //   e.preventDefault();
+  // };
 
   return (
     <section className="oniriqueride-promo-area">
@@ -26,7 +26,7 @@ const Promo = () => {
           <Col md="6">
             <div className="promo-box-right">
               <h3>{t("promo_text")}</h3>
-              <Link to="/" onClick={onClick} className="oniriqueride-btn">
+              <Link to="/contact" className="oniriqueride-btn">
                 {t("promo_btn")}
               </Link>
             </div>

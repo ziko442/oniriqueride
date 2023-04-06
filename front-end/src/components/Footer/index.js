@@ -112,9 +112,9 @@ const Footer = () => {
               <div className="single-footer">
                   <h3>{t("footer.head_office")}</h3>
                   <ul>
-                    <li>{t("footer.phone")}: 326487652 </li>
-                    <li>{t("footer.email")}: example@mail.com</li>
-                    <li>{t("footer.office_time")}: 9AM- 4PM</li>
+                    <li>{t("footer.phone")}: (929) 777-1386 </li>
+                    <li>{t("footer.email")}: contact@oniriqueride.com</li>
+                    <li>{t("footer.office_time")}: 24/7</li>
                   </ul>
 
               </div>

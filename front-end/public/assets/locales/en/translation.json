@@ -203,6 +203,7 @@
     },
     "contact_page" : {
       "get_touch" : "Get in touch",
+      "sent": "Message sent with Success",
       "name" : "Your Name",
       "email" : "Email Address",
       "subject" : "Subject",
