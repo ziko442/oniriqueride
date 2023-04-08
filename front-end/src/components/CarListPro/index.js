@@ -20,20 +20,13 @@ const CarList = (props) => {
       id: 1,
       title: "Category",
     },
+
     {
       id: 2,
-      title: "Options",
-    },
-    {
-      id: 3,
-      title: "Sign in",
-    },
-    {
-      id: 4,
       title: "Payment",
     },
     {
-      id: 5,
+      id: 3,
       title: "Checkout",
     },
   ];
@@ -55,12 +48,8 @@ const CarList = (props) => {
       case 1:
         return <CarCategory units={units} nextStep={nextStep} />;
       case 2:
-        return <Options nextStep={nextStep} previousStep={previousStep} />;
-      case 3:
-        return <SignIn nextStep={nextStep} previousStep={previousStep} />;
-      case 4:
         return <Payment nextStep={nextStep} previousStep={previousStep} />;
-      case 5:
+      case 3:
         return <Checkout nextStep={nextStep} previousStep={previousStep} />;
       default:
         return <CarCategory nextStep={nextStep} />;
@@ -88,6 +77,8 @@ const CarList = (props) => {
             className="justify-content-center"
           >
             {navigationItems.map((item) => (
+              // (!item && <div></div>) 
+              
                (item.title==="Sign in" && token) ?(
                 <div></div>
                ):(
