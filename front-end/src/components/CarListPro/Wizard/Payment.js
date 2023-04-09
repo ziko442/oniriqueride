@@ -1,99 +1,61 @@
-import React, { useState } from 'react';
-import { Button, Form } from 'react-bootstrap';
+// Dependencies
+import * as React from 'react';
+import { CreditCard, PaymentForm } from 'react-square-web-payments-sdk';
 
-export default function Payment({ nextStep, previousStep }) {
-  const [paymentData, setPaymentData] = useState('');
-  const [registrationData, setRegistrationData] = useState({
-    firstName: '',
-    lastName: '',
-    phoneNumber: '',
-    email: '',
-    password: '',
-  });
+const Payment = () => (
+  <PaymentForm
+    /**
+     * Identifies the calling form with a verified application ID generated from
+     * the Square Application Dashboard.
+     */
+    applicationId="sandbox-sq0idb-dR9X9p5XPSarc6SaSOvHGg"
+    /**
+     * Invoked when payment form receives the result of a tokenize generation
+     * request. The result will be a valid credit card or wallet token, or an error.
+     */
+    cardTokenizeResponseReceived={(token, buyer) => {
+      console.info({ token, buyer });
+    }}
+    /**
+     * This function enable the Strong Customer Authentication (SCA) flow
+     *
+     * We strongly recommend use this function to verify the buyer and reduce
+     * the chance of fraudulent transactions.
+     */
+    createVerificationDetails={() => ({
+      amount: '1.00',
+      /* collected from the buyer */
+      billingContact: {
+        addressLines: ['123 Main Street', 'Apartment 1'],
+        familyName: 'Doe',
+        givenName: 'John',
+        countryCode: 'GB',
+        city: 'London',
+      },
+      currencyCode: 'GBP',
+      intent: 'CHARGE',
+    })}
+    /**
+     * Identifies the location of the merchant that is taking the payment.
+     * Obtained from the Square Application Dashboard - Locations tab.
+     */
+    locationId="LTW11K871DYQA"
+  >
+    <CreditCard
+      /**
+       * Attach the CreditCard component to the form and provide the billing information fields.
+       */
+      cardForm={() => ({
+        billingContactFields: {
+          postalCode: true,
+          country: true,
+          addressLines: true,
+          locality: true,
+          region: true,
+        },
+      })}
+    />
+  </PaymentForm>
+);
 
-  const handlePaymentChange = (e) => {
-    setPaymentData(e.target.value);
-  };
-
-  const handleRegistrationChange = (e) => {
-    const { name, value } = e.target;
-    setRegistrationData({ ...registrationData, [name]: value });
-  };
-
-  const handleSubmit = () => {
-    // Handle form submission logic here
-    // You can access paymentData and registrationData to get the form values
-    // For example, you can send them to a backend server for processing
-    console.log('Payment Data:', paymentData);
-    console.log('Registration Data:', registrationData);
-
-    // Move to the next step
-    nextStep();
-  };
-
-  return (
-    <Form>
-      <Form.Group>
-        <Form.Label>Payment</Form.Label>
-        <Form.Control
-          type="text"
-          placeholder="Enter payment details (e.g. Square payment info)"
-          value={paymentData}
-          onChange={handlePaymentChange}
-        />
-      </Form.Group>
-      <Form.Group>
-        <Form.Label>Registration</Form.Label>
-        <Form.Control
-          type="text"
-          placeholder="First Name"
-          name="firstName"
-          value={registrationData.firstName}
-          onChange={handleRegistrationChange}
-        />
-      </Form.Group>
-      <Form.Group>
-        <Form.Control
-          type="text"
-          placeholder="Last Name"
-          name="lastName"
-          value={registrationData.lastName}
-          onChange={handleRegistrationChange}
-        />
-      </Form.Group>
-      <Form.Group>
-        <Form.Control
-          type="tel"
-          placeholder="Phone Number"
-          name="phoneNumber"
-          value={registrationData.phoneNumber}
-          onChange={handleRegistrationChange}
-        />
-      </Form.Group>
-      <Form.Group>
-        <Form.Control
-          type="email"
-          placeholder="Email"
-          name="email"
-          value={registrationData.email}
-          onChange={handleRegistrationChange}
-        />
-      </Form.Group>
-      <Form.Group>
-        <Form.Control
-          type="password"
-          placeholder="Password"
-          name="password"
-          value={registrationData.password}
-          onChange={handleRegistrationChange}
-        />
-      </Form.Group>
-      <Button variant="secondary" onClick={previousStep}>
-        Previous
-      </Button>{' '}
-      <Button variant="primary" onClick={handleSubmit}>
-        Next
-      </Button>
-    </Form>
-  );
-}
+export default Payment;

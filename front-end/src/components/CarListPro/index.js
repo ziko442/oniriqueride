@@ -8,9 +8,7 @@ import "./style.css";
 import { UnitsConverter } from "./UnitsConverter";
 import CarCategory from "./Wizard/CarCategory";
 import Checkout from "./Wizard/Checkout";
-import Options from "./Wizard/Options";
 import Payment from "./Wizard/Payment";
-import SignIn from "./Wizard/Signin";
 
 const CarList = (props) => {
   const func = props.func;
