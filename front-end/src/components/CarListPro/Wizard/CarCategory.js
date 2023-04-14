@@ -16,6 +16,9 @@ export default function CarCategory(props) {
   const [data, setData] = useState([]);
   const car = props;
 
+
+
+
   useEffect(() => {
     axios
       .get("/api/car-categories/")
@@ -28,7 +31,33 @@ export default function CarCategory(props) {
       });
   }, []);
 
-  console.log(data[0]);
+  // console.log(data[0]);
+
+  const handleSelect = (id) => {
+    const selectedItem = data.find(item => item._id === id);
+    if (selectedItem ) {
+      const price = PriceCalculator(
+        selectedItem.costPerMile,
+        selectedItem.costPerMinute,
+        car.units.miles,
+        car.units.minutes
+      );
+      // console.log(price); // Log the calculated price
+      car.nextStep();
+      car.updatePrice(price);
+    } else {
+      console.log("Selected item not found in data or missing price"); // Log an error message
+    }
+  };
+
+   //   // Pass the value of PriceCalculator to the payment component
+  //   const handleSelect = (value) => {
+  //     // Find the selected item from the data array
+  //     const selectedItem = data.find(item => item.value === value);
+
+  //     car.nextStep;
+  //     return <Payment price={selectedItem.value} />;
+  // };
 
   return (
     <Container>
@@ -111,7 +140,7 @@ export default function CarCategory(props) {
                   <Button
                     variant="primary"
                     className="btn button-gradient btn-lg "
-                    onClick={car.nextStep}
+                    onClick={() => handleSelect(item._id)}
                   >
                     Select
                   </Button>

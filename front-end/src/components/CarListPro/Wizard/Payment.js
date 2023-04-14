@@ -3,7 +3,7 @@ import { Button } from "react-bootstrap";
 import { CreditCard, PaymentForm } from "react-square-web-payments-sdk";
 import axios from "axios"; // Import axios library for making API requests
 
-const Payment = ({ previousStep, nextStep }) => {
+const Payment = ({ previousStep, nextStep, price }) => {
   // Function to handle card tokenize response
   const handleCardTokenizeResponse = async (token, buyer) => {
     // Create an order object with the order details
@@ -57,7 +57,7 @@ const Payment = ({ previousStep, nextStep }) => {
         locationId="LTW11K871DYQA"
       >
         <CreditCard>
-          <>Pay 12 USD</>
+          <>Pay {price} USD</>
         </CreditCard>
       </PaymentForm>
     </div>

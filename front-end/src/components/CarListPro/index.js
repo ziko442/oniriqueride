@@ -13,6 +13,14 @@ import Payment from "./Wizard/Payment";
 const CarList = (props) => {
   const func = props.func;
   const units = UnitsConverter(func.distanceValue, func.durationValue);
+
+  const [price, setPrice] = useState(0); // State in parent component
+
+    // Function to update propValue
+    const updatePrice = (newPrice) => {
+      setPrice(newPrice);
+    };
+
   const navigationItems = [
     {
       id: 1,
@@ -44,17 +52,17 @@ const CarList = (props) => {
   const renderStep = () => {
     switch (step) {
       case 1:
-        return <CarCategory units={units} nextStep={nextStep} />;
+        return <CarCategory nextStep={nextStep}  units={units} updatePrice={updatePrice} price={price}/>;
       case 2:
-        return <Payment nextStep={nextStep} previousStep={previousStep} />;
+        return <Payment nextStep={nextStep} previousStep={previousStep} price={price} />;
       case 3:
         return <Checkout nextStep={nextStep} previousStep={previousStep} />;
       default:
-        return <CarCategory nextStep={nextStep} />;
+        return <CarCategory nextStep={nextStep}  units={units} updatePrice={updatePrice} price={price}/>;
     }
   };
 
-  console.log(units);
+  // console.log(units);
 
   const headerStyle = {
     backgroundColor: "rgb(210, 210, 210)",
