@@ -7,15 +7,16 @@ const Payment = ({ previousStep, nextStep, price }) => {
   const handleCardTokenizeResponse = async (token, buyer) => {
     // Create an order object with the order details
     const order = {
-      amount: "1.00", // Update with your desired amount
+      amount: price, // Update with your desired amount
       billingContact: {
         addressLines: ["123 Main Street", "Apartment 1"],
         familyName: "Doe",
         givenName: "John",
-        countryCode: "GB",
-        city: "London",
+        countryCode: "US",
+        phone: "06",
+        city: "New York",
       },
-      currencyCode: "GBP",
+      currencyCode: "USD",
       intent: "CHARGE",
       token: token, // Pass the token received from cardTokenizeResponseReceived
     };
@@ -42,7 +43,7 @@ const Payment = ({ previousStep, nextStep, price }) => {
         applicationId="sandbox-sq0idb-dR9X9p5XPSarc6SaSOvHGg"
         cardTokenizeResponseReceived={handleCardTokenizeResponse} // Pass the function to handle card tokenize response
         createVerificationDetails={() => ({
-          amount: "1.00",
+          amount: price,
           billingContact: {
             addressLines: ["123 Main Street", "Apartment 1"],
             familyName: "Doe",
@@ -50,13 +51,13 @@ const Payment = ({ previousStep, nextStep, price }) => {
             countryCode: "GB",
             city: "London",
           },
-          currencyCode: "GBP",
+          currencyCode: "USD",
           intent: "CHARGE",
         })}
         locationId="LTW11K871DYQA"
       >
         <CreditCard>
-          <>Pay {price} USD</>
+          <>Pay ${price}</>
         </CreditCard>
       </PaymentForm>
     </div>
