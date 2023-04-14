@@ -1,36 +1,37 @@
 import React, { useState } from "react";
 import { CreditCard, PaymentForm } from "react-square-web-payments-sdk";
-import axios from "axios"; // Import axios library for making API requests
+import axios from "axios";
 
 const Payment = ({ previousStep, nextStep, price }) => {
+  // const [price, setPrice] = useState(""); // State to hold the price value
   const [billingContact, setBillingContact] = useState({}); // State to hold the billing contact details
 
   // Function to handle card tokenize response
   const handleCardTokenizeResponse = async (token, buyer) => {
-    // Create an order object with the order details
+    // Create an order object with the dynamically inputted values
     const order = {
-      amount: price, // Update with your desired amount
+      amount: price,
       billingContact: billingContact,
-      currencyCode: "US",
+      currencyCode: "USD",
       intent: "CHARGE",
-      token: token, // Pass the token received from cardTokenizeResponseReceived
+      token: token,
     };
 
     try {
-      // Send a POST request to the backend with the order details
-      const response = await axios.post("/api/payments", order); // Update with your backend API endpoint
-      // Handle the response from the backend
+      const response = await axios.post("/api/payments", order);
       console.log("Payment successful", response.data);
       // Update the UI or take any other necessary action based on the response
       // E.g., show a success message, navigate to the next step, etc.
     } catch (error) {
-      // Handle any errors that occurred during the API call
       console.log(order);
       console.error("Payment failed", error);
       // Update the UI or take any other necessary action based on the error
       // E.g., show an error message, retry payment, etc.
     }
   };
+
+  // Function to handle input change for price field
+
 
   // Function to handle input change for billing contact fields
   const handleBillingContactChange = (e) => {
@@ -43,7 +44,13 @@ const Payment = ({ previousStep, nextStep, price }) => {
 
   return (
     <div>
-       <input
+      {/* <input
+        type="number"
+        placeholder="Enter Price"
+        value={price}
+        onChange={handlePriceChange}
+      /> */}
+      <input
         type="text"
         name="addressLines"
         placeholder="Enter Address"
@@ -78,30 +85,23 @@ const Payment = ({ previousStep, nextStep, price }) => {
         value={billingContact.city || ""}
         onChange={handleBillingContactChange}
       />
-
       <PaymentForm
         applicationId="sandbox-sq0idb-dR9X9p5XPSarc6SaSOvHGg"
-        cardTokenizeResponseReceived={handleCardTokenizeResponse} // Pass the function to handle card tokenize response
+        cardTokenizeResponseReceived={handleCardTokenizeResponse}
         createVerificationDetails={() => ({
           amount: price,
-          billingContact: {
-            addressLines: ["123 Main Street", "Apartment 1"],
-            familyName: "Doe",
-            givenName: "John",
-            countryCode: "GB",
-            city: "London",
-          },
-          currencyCode: "GBP",
+          billingContact: billingContact,
+          currencyCode: "USD",
           intent: "CHARGE",
         })}
         locationId="LTW11K871DYQA"
       >
         <CreditCard>
-          <>Pay {price} USD</>
+          <>Pay ${price}</>
         </CreditCard>
       </PaymentForm>
-    </div>
+      </div>
   );
-};
+      };
 
 export default Payment;
